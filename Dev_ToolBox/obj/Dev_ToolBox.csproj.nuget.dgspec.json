@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VS_Projects\\Dev_ToolBox\\Dev_ToolBox\\Dev_ToolBox.csproj": {}
+    "D:\\Git\\Dev_ToolBox\\Dev_ToolBox\\Dev_ToolBox.csproj": {}
   },
   "projects": {
-    "D:\\VS_Projects\\Dev_ToolBox\\Dev_ToolBox\\Dev_ToolBox.csproj": {
+    "D:\\Git\\Dev_ToolBox\\Dev_ToolBox\\Dev_ToolBox.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VS_Projects\\Dev_ToolBox\\Dev_ToolBox\\Dev_ToolBox.csproj",
+        "projectUniqueName": "D:\\Git\\Dev_ToolBox\\Dev_ToolBox\\Dev_ToolBox.csproj",
         "projectName": "Dev_ToolBox",
-        "projectPath": "D:\\VS_Projects\\Dev_ToolBox\\Dev_ToolBox\\Dev_ToolBox.csproj",
+        "projectPath": "D:\\Git\\Dev_ToolBox\\Dev_ToolBox\\Dev_ToolBox.csproj",
         "packagesPath": "C:\\Users\\tpiessat\\.nuget\\packages\\",
-        "outputPath": "D:\\VS_Projects\\Dev_ToolBox\\Dev_ToolBox\\obj\\",
+        "outputPath": "D:\\Git\\Dev_ToolBox\\Dev_ToolBox\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

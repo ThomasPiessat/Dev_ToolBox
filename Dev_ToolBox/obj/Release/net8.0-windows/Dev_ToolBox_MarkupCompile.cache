@@ -1,18 +1,18 @@
 ﻿Dev_ToolBox
-1.0.0.0
+
 
 winexe
 C#
 .cs
-D:\Git\Dev_ToolBox\Dev_ToolBox\obj\Debug\net8.0-windows\
+D:\Git\Dev_ToolBox\Dev_ToolBox\obj\Release\net8.0-windows\
 Dev_ToolBox
 none
 false
-TRACE;DEBUG;NET;NET8_0;NETCOREAPP
+TRACE;RELEASE;NET;NET8_0;NETCOREAPP
 D:\Git\Dev_ToolBox\Dev_ToolBox\App.xaml
 3282502240
 
-8-2007076655
+669242266
 198-294894759
 MainWindow.xaml;PercentageCalculatorPage.xaml;QRCodeGeneratorPage.xaml;
 

@@ -19,8 +19,8 @@ jobs:
         dotnet-version: 8.x
 
     - name: Build WPF Application
-      run: dotnet publish -c Release
+      run: dotnet build -c Release
 
-    - name: Publish WPF Application
-      run: dotnet build ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-x64 -p:PublishSingleFile=true
+    #- name: Publish WPF Application
+     # run: dotnet build ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-x64 -p:PublishSingleFile=true
   

@@ -1,0 +1,23 @@
+﻿<Page x:Class="Dev_ToolBox.PercentageCalculatorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Percentage Calculator">
+    <StackPanel Margin="10">
+        <TextBlock Text="Percentage Calculator" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Enter the total value:" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtTotalValue" Width="100" Margin="10,0,0,0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Enter the percentage:" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtPercentage" Width="50" Margin="10,0,0,0"/>
+            <TextBlock Text="%" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <Button Content="Calculate" Width="100" Margin="0,0,0,10" Click="CalculateButton_Click"/>
+
+        <TextBlock x:Name="txtResult" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center"/>
+    </StackPanel>
+</Page>

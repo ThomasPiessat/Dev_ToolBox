@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -23,6 +19,25 @@ namespace Dev_ToolBox
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ToolSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListBoxItem selectedTool = lstTools.SelectedItem as ListBoxItem;
+
+            if (selectedTool != null)
+            {
+                switch (selectedTool.Content.ToString())
+                {
+                    case "Percentage Calculator":
+                        mainFrame.Navigate(new PercentageCalculatorPage());
+                        break;
+                    case "QR Code Generator":
+                        mainFrame.Navigate(new QRCodeGeneratorPage());
+                        break;
+                        // Add cases for other tools as needed
+                }
+            }
         }
     }
 }

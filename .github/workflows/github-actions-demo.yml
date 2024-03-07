@@ -18,11 +18,8 @@ jobs:
       with:
         dotnet-version: 8.x
 
-    - name: Install dependencies
-      run: dotnet restore
-
     - name: Build WPF Application
-      run: dotnet build ${{ env.PROJECT_PATH }} -c Release --no-restore
+      run: dotnet publish -c Release
 
     - name: Publish WPF Application
       run: dotnet build ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-x64 -p:PublishSingleFile=true

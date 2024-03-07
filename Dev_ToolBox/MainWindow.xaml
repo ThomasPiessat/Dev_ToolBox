@@ -14,8 +14,9 @@
 
         <!-- Side Bar with Tools -->
         <ListBox x:Name="lstTools" SelectionChanged="ToolSelectionChanged">
-            <ListBoxItem Content="Percentage Calculator"/>
+            <ListBoxItem Content="Calculator"/>
             <ListBoxItem Content="Compound Interest Calculator"/>
+            <ListBoxItem Content="Percentage Calculator"/>
             <ListBoxItem Content="Diff Viewer"/>
             <ListBoxItem Content="QR Code Generator"/>
             <!-- Add more tools here -->

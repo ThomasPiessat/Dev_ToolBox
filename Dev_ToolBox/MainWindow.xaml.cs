@@ -29,11 +29,14 @@ namespace Dev_ToolBox
             {
                 switch (selectedTool.Content.ToString())
                 {
-                    case "Percentage Calculator":
-                        mainFrame.Navigate(new PercentageCalculatorPage());
+                    case "Calculator":
+                        //mainFrame.Navigate();
                         break;
                     case "Compound Interest Calculator":
                         mainFrame.Navigate(new CompoundInterestCalculatorPage());
+                        break;
+                    case "Percentage Calculator":
+                        mainFrame.Navigate(new PercentageCalculatorPage());
                         break;
                     case "Diff Viewer":
                         mainFrame.Navigate(new DiffViewerPage());

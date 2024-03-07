@@ -16,6 +16,7 @@
         <ListBox x:Name="lstTools" SelectionChanged="ToolSelectionChanged">
             <ListBoxItem Content="Percentage Calculator"/>
             <ListBoxItem Content="Compound Interest Calculator"/>
+            <ListBoxItem Content="Diff Viewer"/>
             <ListBoxItem Content="QR Code Generator"/>
             <!-- Add more tools here -->
         </ListBox>

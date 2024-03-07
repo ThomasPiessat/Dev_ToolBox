@@ -35,6 +35,9 @@ namespace Dev_ToolBox
                     case "Compound Interest Calculator":
                         mainFrame.Navigate(new CompoundInterestCalculatorPage());
                         break;
+                    case "Diff Viewer":
+                        mainFrame.Navigate(new DiffViewerPage());
+                        break;
                     case "QR Code Generator":
                         mainFrame.Navigate(new QRCodeGeneratorPage());
                         break;

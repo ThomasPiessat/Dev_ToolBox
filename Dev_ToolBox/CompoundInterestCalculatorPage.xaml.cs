@@ -30,7 +30,7 @@ namespace Dev_ToolBox
             try
             {
                 double principalAmount = Convert.ToDouble(txtPrincipalAmount.Text);
-                double annualInterestRate = Convert.ToDouble(txtAnnualInterestRate.Text);
+                double annualInterestRate = Convert.ToDouble(txtAnnualInterestRate.Text) / 100;
                 double timePeriod = Convert.ToDouble(txtTimePeriod.Text);
 
                 // Compounding frequency in a year
@@ -45,31 +45,35 @@ namespace Dev_ToolBox
                     }
                 }
 
-                double compoundInterest = principalAmount * Math.Pow(1 + (annualInterestRate / (compoundingFrequency * 100)), compoundingFrequency * timePeriod) - principalAmount;
+                // Calculate compound interest on principal amount
+                double compoundInterest = principalAmount * Math.Pow(1 + annualInterestRate / compoundingFrequency, compoundingFrequency * timePeriod);
 
-                txtCompoundInterestResult.Text = $"Compound Interest: {compoundInterest:F2}";
-            }
-            catch (FormatException)
-            {
-                txtCompoundInterestResult.Text = "Invalid input. Please enter valid numbers.";
-            }
-        }
-
-        private void CalculateAllTimeRateOfReturnButton_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                double principalAmount = Convert.ToDouble(txtPrincipalAmount.Text);
+                // Calculate additional contributions
                 double additionalContributions = Convert.ToDouble(txtAdditionalContributions.Text);
-                double allTimeValue = principalAmount + additionalContributions;
+                double additionalCompoundInterest = additionalContributions * ((Math.Pow(1 + annualInterestRate / compoundingFrequency, compoundingFrequency * timePeriod) - 1) / (annualInterestRate / compoundingFrequency));
 
-                double allTimeRateOfReturn = (Math.Pow(allTimeValue / principalAmount, 1.0 / double.Parse(txtTimePeriod.Text)) - 1) * 100;
+                // Total amount after compound interest with additional contributions
+                double totalAmount = compoundInterest + additionalCompoundInterest;
 
-                txtAllTimeRateOfReturnResult.Text = $"All-time Rate of Return: {allTimeRateOfReturn:F2}%";
+                // Total Additional deposits
+                double totalAdditionalDeposits = compoundingFrequency * timePeriod * additionalContributions;
+
+                // Total interest earned
+                double totalInterestEarned = totalAmount - totalAdditionalDeposits - principalAmount; 
+
+                // Total percentage return
+                double timeWeightedReturn = ((principalAmount * Math.Pow(1 + annualInterestRate / compoundingFrequency, compoundingFrequency * timePeriod) - principalAmount) / 1000) * 100;
+             
+                txtTotalAmountResult.Text = $"Total Amount: {totalAmount:C2}";
+                txtTotalInterestEarnedResult.Text = $"Total Interest Earned: {totalInterestEarned:C2}";
+                txtTotalAdditionalDepositsResult.Text = $"Total Additional Deposits: {totalAdditionalDeposits:C2}";
+                txtInitialBalance.Text = $"Initial Balance: {principalAmount:C2}";
+                txtAllTimeRateOfReturnResult.Text = $"All-time Rate of Return: {timeWeightedReturn:F2}%";
+
             }
             catch (FormatException)
             {
-                txtAllTimeRateOfReturnResult.Text = "Invalid input. Please enter valid numbers.";
+                txtTotalAmountResult.Text = "Invalid input. Please enter valid numbers.";
             }
         }
     }

@@ -41,7 +41,9 @@
             <TextBox x:Name="txtAdditionalContributions" Width="100" Margin="10,0,0,0"/>
         </StackPanel>
 
-        <Button Content="Calculate Compound Interest" Width="220" Margin="0,0,0,10" Click="CalculateCompoundInterestButton_Click"/>
+        <Grid Background="{x:Static local:AppStyles.SidebarBackgroundColor}">
+            <Button Content="Calculate Compound Interest" Foreground="{x:Static local:AppStyles.ButtonForegroundColor}" Click="CalculateCompoundInterestButton_Click"/>
+        </Grid>
 
         <TextBlock x:Name="txtTotalAmountResult" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center"/>
         <TextBlock x:Name="txtTotalInterestEarnedResult" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center"/>

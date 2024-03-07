@@ -13,7 +13,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- Side Bar with Tools -->
-        <ListBox x:Name="lstTools" SelectionChanged="ToolSelectionChanged">
+        <ListBox Background="#2c3e50" x:Name="lstTools" SelectionChanged="ToolSelectionChanged">
             <ListBoxItem Content="Calculator"/>
             <ListBoxItem Content="Compound Interest Calculator"/>
             <ListBoxItem Content="Percentage Calculator"/>

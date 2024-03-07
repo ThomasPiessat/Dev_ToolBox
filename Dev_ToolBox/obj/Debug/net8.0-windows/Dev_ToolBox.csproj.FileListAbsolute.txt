@@ -22,3 +22,6 @@ D:\Git\Dev_ToolBox\Dev_ToolBox\obj\Debug\net8.0-windows\refint\Dev_ToolBox.dll
 D:\Git\Dev_ToolBox\Dev_ToolBox\obj\Debug\net8.0-windows\Dev_ToolBox.pdb
 D:\Git\Dev_ToolBox\Dev_ToolBox\obj\Debug\net8.0-windows\Dev_ToolBox.genruntimeconfig.cache
 D:\Git\Dev_ToolBox\Dev_ToolBox\obj\Debug\net8.0-windows\ref\Dev_ToolBox.dll
+D:\Git\Dev_ToolBox\Dev_ToolBox\obj\Debug\net8.0-windows\CompoundInterestCalculatorPage.g.cs
+D:\Git\Dev_ToolBox\Dev_ToolBox\obj\Debug\net8.0-windows\CompoundInterestCalculatorPage.baml
+D:\Git\Dev_ToolBox\Dev_ToolBox\obj\Debug\net8.0-windows\Dev_ToolBox.sourcelink.json

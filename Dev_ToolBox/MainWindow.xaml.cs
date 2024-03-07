@@ -32,6 +32,9 @@ namespace Dev_ToolBox
                     case "Percentage Calculator":
                         mainFrame.Navigate(new PercentageCalculatorPage());
                         break;
+                    case "Compound Interest Calculator":
+                        mainFrame.Navigate(new CompoundInterestCalculatorPage());
+                        break;
                     case "QR Code Generator":
                         mainFrame.Navigate(new QRCodeGeneratorPage());
                         break;

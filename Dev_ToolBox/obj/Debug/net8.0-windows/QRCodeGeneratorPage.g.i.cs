@@ -53,7 +53,7 @@ namespace Dev_ToolBox {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Dev_ToolBox;V1.0.0.0;component/qrcodegeneratorpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Dev_ToolBox;component/qrcodegeneratorpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\QRCodeGeneratorPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

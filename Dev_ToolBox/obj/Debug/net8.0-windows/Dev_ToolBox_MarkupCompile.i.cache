@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\Git\Dev_ToolBox\Dev_ToolBox\App.xaml
-3282502240
+4-1619601411
 
-8-2007076655
+91879405232
 198-294894759
-MainWindow.xaml;PercentageCalculatorPage.xaml;QRCodeGeneratorPage.xaml;
+CompoundInterestCalculatorPage.xaml;MainWindow.xaml;PercentageCalculatorPage.xaml;QRCodeGeneratorPage.xaml;
 
-False
+True
 

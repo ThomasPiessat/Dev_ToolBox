@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Dev_ToolBox.Pages.Calculator;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -30,7 +31,7 @@ namespace Dev_ToolBox
                 switch (selectedTool.Content.ToString())
                 {
                     case "Calculator":
-                        //mainFrame.Navigate();
+                        mainFrame.Navigate(new CalculatorPage());
                         break;
                     case "Compound Interest Calculator":
                         mainFrame.Navigate(new CompoundInterestCalculatorPage());

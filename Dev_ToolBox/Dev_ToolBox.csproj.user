@@ -13,7 +13,7 @@
     <Compile Update="DiffViewerPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="PercentageCalculatorPage.xaml.cs">
+    <Compile Update="Pages\Calculator\CalculatorPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="QRCodeGeneratorPage.xaml.cs">
@@ -30,7 +30,7 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="PercentageCalculatorPage.xaml">
+    <Page Update="Pages\Calculator\CalculatorPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="QRCodeGeneratorPage.xaml">

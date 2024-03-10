@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Git\Dev_ToolBox\Dev_ToolBox\obj\Release\net8.0-windows\
+D:\PullGit\Dev_ToolBox\Dev_ToolBox\obj\Release\net8.0-windows\
 Dev_ToolBox
 none
 false
 TRACE;RELEASE;NET;NET8_0;NETCOREAPP
-D:\Git\Dev_ToolBox\Dev_ToolBox\App.xaml
-4-1619601411
+D:\PullGit\Dev_ToolBox\Dev_ToolBox\App.xaml
+5839787237
 
-7-339243143
-198-294894759
-CompoundInterestCalculatorPage.xaml;MainWindow.xaml;PercentageCalculatorPage.xaml;QRCodeGeneratorPage.xaml;
+81092496983
+1981451641563
+CompoundInterestCalculatorPage.xaml;DiffViewerPage.xaml;MainWindow.xaml;Pages\PercentageCalculator\PercentageCalculatorPage.xaml;QRCodeGeneratorPage.xaml;
 
 False
 

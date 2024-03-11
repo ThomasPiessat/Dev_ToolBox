@@ -27,7 +27,6 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          your-program-name-here-linux
           your-program-name-here-macos
           your-program-name-here-win.exe
       env:

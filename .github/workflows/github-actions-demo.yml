@@ -3,7 +3,7 @@ name: Build WPF Application and Release
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - 'v*.*.*-alpha'
     branches:
       - main
 env:

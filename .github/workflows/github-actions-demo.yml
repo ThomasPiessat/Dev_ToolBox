@@ -23,12 +23,11 @@ jobs:
     - name: Build WPF Application
       run: dotnet build -c Release
 
-    - name: Release
-      uses: softprops/action-gh-release@v1
-      with:
-        files: |
-          Dev_ToolBox/Dev_ToolBox/bin/Release/net8.0-windows/Dev_ToolBox.exe
-          tag_name: ${{ github.run_number }}
-          release_name: Release ${{ github.run_number }}
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.run_number }}
+        release_name: Release ${{ github.run_number }}

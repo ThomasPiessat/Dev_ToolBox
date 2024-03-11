@@ -1,9 +1,9 @@
-name: Build WPF Application
+name: Build WPF Application and Release
 
 on:
   push:
     tags:
-      - 'v*'
+      - 'v*.*.*'
     branches:
       - main
 env:
@@ -23,11 +23,12 @@ jobs:
     - name: Build WPF Application
       run: dotnet build -c Release
 
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          your-program-name-here-linux
+          your-program-name-here-macos
+          your-program-name-here-win.exe
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ github.run_number }}
-        release_name: Release ${{ github.run_number }}

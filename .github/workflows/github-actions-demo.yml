@@ -29,7 +29,7 @@ jobs:
         name: my-executable
         path: bin/Release/net8.0/publish
   
-    - name: Create Release
-      run: gh release create v0.3.0-alpha --title "Release X.Y.Z" --notes "Release notes here" --repo ThomasPiessat/Dev_ToolBox bin/Release/net8.0/publish
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    # - name: Create Release
+    #   run: gh release create v0.3.0-alpha --title "Release X.Y.Z" --notes "Release notes here" --repo ThomasPiessat/Dev_ToolBox bin/Release/net8.0/publish
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

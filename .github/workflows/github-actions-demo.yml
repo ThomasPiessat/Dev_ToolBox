@@ -20,14 +20,16 @@ jobs:
       with:
         dotnet-version: 8.x
 
-    - name: Build WPF Application
-      run: dotnet build -c Release
-
-    - name: Release
-      uses: softprops/action-gh-release@v1
+    - name: Build executable
+      run: dotnet publish -c Release -o bin/Release/net8.0/publish
+  
+    - name: Upload Executable
+      uses: actions/upload-artifact@v4
       with:
-        files: |
-          your-program-name-here-macos
-          your-program-name-here-win.exe
+        name: my-executable
+        path: bin/Release/net8.0/publish
+  
+    - name: Create Release
+      run: gh release create vX.Y.Z --title "Release X.Y.Z" --notes "Release notes here" --repo owner/repo-name bin/Release/net6.0/publish
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

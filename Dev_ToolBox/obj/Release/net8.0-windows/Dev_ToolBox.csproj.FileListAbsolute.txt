@@ -78,3 +78,10 @@ D:\PullGit\Dev_ToolBox\Dev_ToolBox\obj\Release\net8.0-windows\Dev_ToolBox.genrun
 D:\PullGit\Dev_ToolBox\Dev_ToolBox\obj\Release\net8.0-windows\ref\Dev_ToolBox.dll
 D:\PullGit\Dev_ToolBox\Dev_ToolBox\obj\Release\net8.0-windows\Pages\PercentageCalculator\PercentageCalculatorPage.baml
 D:\PullGit\Dev_ToolBox\Dev_ToolBox\obj\Release\net8.0-windows\Pages\PercentageCalculator\PercentageCalculatorPage.g.cs
+D:\PullGit\Dev_ToolBox\bin\Release\net8.0\publish\Dev_ToolBox.exe
+D:\PullGit\Dev_ToolBox\bin\Release\net8.0\publish\Dev_ToolBox.deps.json
+D:\PullGit\Dev_ToolBox\bin\Release\net8.0\publish\Dev_ToolBox.runtimeconfig.json
+D:\PullGit\Dev_ToolBox\bin\Release\net8.0\publish\Dev_ToolBox.dll
+D:\PullGit\Dev_ToolBox\bin\Release\net8.0\publish\Dev_ToolBox.pdb
+D:\PullGit\Dev_ToolBox\Dev_ToolBox\obj\Release\net8.0-windows\Pages\Calculator\CalculatorPage.g.cs
+D:\PullGit\Dev_ToolBox\Dev_ToolBox\obj\Release\net8.0-windows\Pages\Calculator\CalculatorPage.baml

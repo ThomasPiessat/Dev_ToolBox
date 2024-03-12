@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET8_0;NETCOREAPP
 D:\PullGit\Dev_ToolBox\Dev_ToolBox\App.xaml
-5839787237
+6-296053450
 
-81092496983
+10-451532290
 1981451641563
-CompoundInterestCalculatorPage.xaml;DiffViewerPage.xaml;MainWindow.xaml;Pages\PercentageCalculator\PercentageCalculatorPage.xaml;QRCodeGeneratorPage.xaml;
+CompoundInterestCalculatorPage.xaml;DiffViewerPage.xaml;MainWindow.xaml;Pages\Calculator\CalculatorPage.xaml;Pages\PercentageCalculator\PercentageCalculatorPage.xaml;QRCodeGeneratorPage.xaml;
 
 False
 

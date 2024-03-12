@@ -20,29 +20,31 @@ jobs:
       with:
         dotnet-version: 8.x
 
-    - name: Restore
-      run: dotnet restore ${{ env.PROJECT_PATH }}
-
     - name: Build executable
-      run: dotnet build -c Release --no-restore --self-contained -p:PublishSingleFile=true
+      run: dotnet build -c Release -o bin/Release/net8.0/publish
+    # - name: Restore
+    #   run: dotnet restore ${{ env.PROJECT_PATH }}
+
+    # - name: Build executable
+    #   run: dotnet build -c Release --no-restore --self-contained -p:PublishSingleFile=true
   
     # - name: Publish
     #   run: dotnet publish ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-x64 -p:PublishSingleFile=true --no-build
   
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
-        draft: false
-        prerelease: false
+    # - name: Create Release
+    #   id: create_release
+    #   uses: actions/create-release@v1
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #   with:
+    #     tag_name: ${{ github.ref }}
+    #     release_name: Release ${{ github.ref }}
+    #     draft: false
+    #     prerelease: false
 
-    - name: Upload assets
-      uses: csexton/release-asset-action@v3
-      with:
-        pattern: Dev_ToolBox/bin/Release/net8.0/publish/*.exe
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        release-url: ${{ steps.create_release.outputs.upload_url }}
+    # - name: Upload assets
+    #   uses: csexton/release-asset-action@v3
+    #   with:
+    #     pattern: Dev_ToolBox/bin/Release/net8.0/publish/*.exe
+    #     github-token: ${{ secrets.GITHUB_TOKEN }}
+    #     release-url: ${{ steps.create_release.outputs.upload_url }}

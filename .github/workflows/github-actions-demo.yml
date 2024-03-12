@@ -7,7 +7,7 @@ on:
     branches:
       - main
 env:
-  PROJECT_PATH: Dev_ToolBox\Dev_ToolBox.csproj
+  PROJECT_PATH: Dev_ToolBox/Dev_ToolBox.csproj
 jobs:
   build:
     runs-on: windows-latest
@@ -20,9 +20,15 @@ jobs:
       with:
         dotnet-version: 8.x
 
+    - name: Restore
+      run: dotnet restore ${{ env.PROJECT_PATH }}
+
     - name: Build executable
-      run: dotnet build -c Release -o bin/Release/net8.0/publish
+      run: dotnet build ${{ env.PROJECT_PATH }} -c Release --no-restore
   
+    - name: Publish
+      run: dotnet publish ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-X64 -p:PublishSingleFile=true
+
     - name: Upload Executable
       uses: actions/upload-artifact@v4
       with:

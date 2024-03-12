@@ -27,13 +27,7 @@ jobs:
       run: dotnet build ${{ env.PROJECT_PATH }} -c Release --no-restore
   
     - name: Publish
-      run: dotnet publish ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-X64 -p:PublishSingleFile=true
-
-    - name: Upload Executable
-      uses: actions/upload-artifact@v4
-      with:
-        name: Dev_ToolBox
-        path: bin/Release/net8.0/publish
+      run: dotnet publish ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-X64 -p:PublishSingleFile=true --no-build
   
     - name: Create Release
       id: create_release
@@ -47,11 +41,8 @@ jobs:
         prerelease: false
 
     - name: Upload assets
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: csexton/release-asset-action@v3
       with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: bin/Release/net8.0/publish/
-        asset_name: Dev_ToolBox.${{ github.ref }}.zip
-        asset_content_type: application/zip
+        pattern: Dev_ToolBox/bin/Release/net8.0/publish/*.exe
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        release-url: ${{ steps.create_release.outputs.upload_url }}

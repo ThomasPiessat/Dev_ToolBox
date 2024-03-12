@@ -3,7 +3,7 @@ name: Build WPF Application and Release
 on:
   push:
     tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+      - v* # Push events to matching v*, i.e. v1.0, v20.15.10
     branches:
       - main
 env:
@@ -31,16 +31,12 @@ jobs:
     - name: Publish
       run: dotnet publish ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-x64 -p:PublishSingleFile=true
   
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
+    - name: Create release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
-        draft: false
-        prerelease: false
+        tag: ${{ github.ref_name }}
+      run: |
+          gh release create "$tag" \
 
     # - name: Upload assets
     #   uses: csexton/release-asset-action@v3

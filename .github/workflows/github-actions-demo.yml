@@ -8,8 +8,9 @@ on:
       - main
 env:
   PROJECT_PATH: Dev_ToolBox/Dev_ToolBox.csproj
+  
 jobs:
-  build:
+  deploy:
     runs-on: windows-latest
     steps:
     - name: Checkout Repository
@@ -30,7 +31,7 @@ jobs:
   
     - name: Publish
       run: dotnet publish ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-x64 -p:PublishSingleFile=true
-  
+
     - uses: actions/create-release@v1
       id: create_release
       env:

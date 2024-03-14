@@ -36,12 +36,6 @@ jobs:
         run: Compress-Archive -Path ./Dev_ToolBox/bin/Release -DestinationPath ./Draft.zip
         shell: powershell
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
-        with:
-            name: Dev_ToolBox
-            path: ./Draft.zip
-
       - name: Version as date
         id: get_version
         run: echo "::set-output name=version::$(Get-Date -Format 'yyyy.MM.dd.HHmmss')"

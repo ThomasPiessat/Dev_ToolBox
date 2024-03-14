@@ -42,13 +42,24 @@ jobs:
             name: Dev_ToolBox
             path: ./Draft.zip
 
+      - name: Version as date
+        id: get_version
+        run: echo "::set-output name=version::$(Get-Date -Format 'yyyy.MM.dd.HHmmss')"
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.run_number }}
-          release_name: Release ${{ github.run_number }}
-          files: |
-           ./Draft.zip
+          tag_name: ${{ steps.get_version.outputs.version }}
+          release_name: Release ${{ steps.get_version.outputs.version }}
+          draft: false
+          prerelease: false
+
+      - name: Add asset
+        uses: AButler/upload-release-assets@v3.0
+        with:
+         files: ./Draft.zip
+         repo-token: ${{ secrets.GITHUB_TOKEN }}
+         release-tag: ${{ steps.get_version.outputs.version }}

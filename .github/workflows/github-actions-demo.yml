@@ -29,33 +29,26 @@ jobs:
       - name: Build
         run: dotnet build ${{ env.PROJECT_PATH }} -c Release --no-restore
 
-      - name: Debug
-        run: |
-            ls
-            cd ./Dev_ToolBox
-            ls
-            cd ./bin/Release/net8.0-windows10.0.19041.0/win-x64/publish
-
       - name: Publish
         run: dotnet publish ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-x64 -p:PublishSingleFile=true --no-build
 
-      - name: Upload Executable
+      - name: Zip
+        run: Compress-Archive -Path ./Dev_ToolBox/bin/Release -DestinationPath ./Draft.zip
+        shell: powershell
+
+      - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
             name: Dev_ToolBox
-            path: Dev_ToolBox/bin/Release/net8.0-windows10.0.19041.0/win-x64/publish
+            path: ./Draft.zip
 
-      - uses: actions/create-release@v1
+      - name: Create Release
         id: create_release
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
-
-      - name: Add asset
-        uses: AButler/upload-release-assets@v3.0
-        with:
-          files: C:/OpenRV/openrv.tar.gz
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          release-tag: ${{ steps.get_version.outputs.version }}
+          tag_name: ${{ github.run_number }}
+          release_name: Release ${{ github.run_number }}
+          files: |
+           ./Draft.zip

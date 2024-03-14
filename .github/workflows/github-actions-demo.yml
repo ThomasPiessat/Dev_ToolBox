@@ -9,7 +9,7 @@ env:
   PROJECT_PATH: Dev_ToolBox/Dev_ToolBox.csproj
 
 jobs:
-  deploy:
+  release:
     runs-on: windows-latest
     steps:
     - name: Checkout Repository

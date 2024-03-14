@@ -1,13 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "XNh/qKSJX5r5dAJEy2V2m6zjkd64d0bgV4E7MmPLEoxUjK4FaJvorIaVCWNc2FOhMIb863llKXSSTcL2nNYrBg==",
+  "dgSpecHash": "HZPBM+Dmc/7y75C2WSAENMEcNt5C6YHbnvrpPk8gR7SsMec77LeSMntMrIo3yajumD22gZYZaFKyq7HWib7faQ==",
   "success": true,
   "projectFilePath": "D:\\PullGit\\Dev_ToolBox\\Dev_ToolBox\\Dev_ToolBox.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.2\\microsoft.net.illink.tasks.8.0.2.nupkg.sha512",
-    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.2\\microsoft.netcore.app.runtime.win-x64.8.0.2.nupkg.sha512",
-    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.2\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.2.nupkg.sha512",
-    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.2\\microsoft.aspnetcore.app.runtime.win-x64.8.0.2.nupkg.sha512"
+    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\3.1.32\\microsoft.aspnetcore.app.runtime.win-x64.3.1.32.nupkg.sha512",
+    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\3.1.32\\microsoft.windowsdesktop.app.runtime.win-x64.3.1.32.nupkg.sha512",
+    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.32\\microsoft.netcore.app.host.win-x64.3.1.32.nupkg.sha512",
+    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\3.1.32\\microsoft.netcore.app.runtime.win-x64.3.1.32.nupkg.sha512"
   ],
   "logs": []
 }

@@ -2,6 +2,8 @@ name: Build WPF Application and Release
 
 on:
   push:
+    branches:
+      - main
     tags:
       - "v*"
 

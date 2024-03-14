@@ -6,7 +6,10 @@ on:
       - main
     tags:
       - "v*"
-
+      
+permissions:
+  id-token: write
+  contents: read
 env:
   PROJECT_PATH: Dev_ToolBox/Dev_ToolBox.csproj
 

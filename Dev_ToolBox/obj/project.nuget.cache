@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "3CsMJWO5SUHMaDE/B26ej3ktwIQUMbEgnwN/sih2z/VPLUH206o5ce0lQFYXjVRs+8J1puazOLGf0x9Dj9gRWg==",
+  "dgSpecHash": "J+ee9tfb+wwiPeiLgU9RUAFVsluB2cBcuHChto8dY0Ir60A9qyVAiElo0A5Nmbn0w1flAup+opNeELMaQ8LV3g==",
   "success": true,
   "projectFilePath": "D:\\PullGit\\Dev_ToolBox\\Dev_ToolBox\\Dev_ToolBox.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.3\\microsoft.netcore.app.runtime.win-x64.8.0.3.nupkg.sha512",
+    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.3\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.3.nupkg.sha512",
+    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.3\\microsoft.aspnetcore.app.runtime.win-x64.8.0.3.nupkg.sha512",
+    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.31\\microsoft.windows.sdk.net.ref.10.0.19041.31.nupkg.sha512"
+  ],
   "logs": []
 }

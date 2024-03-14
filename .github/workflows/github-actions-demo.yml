@@ -7,15 +7,15 @@ on:
     tags:
       - "v*"
       
-permissions:
-  id-token: write
-  contents: read
 env:
   PROJECT_PATH: Dev_ToolBox/Dev_ToolBox.csproj
 
 jobs:
   deploy:
     runs-on: windows-latest
+    permissions:
+        id-token: write
+        contents: read
     steps:
       - uses: actions/checkout@v4
 

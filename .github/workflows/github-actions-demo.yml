@@ -48,8 +48,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.DEV_TOOL_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          tag_name: ${{ steps.get_version.outputs.version }}
+          release_name: Release ${{ steps.get_version.outputs.version }}
           draft: false
           prerelease: false
 
@@ -58,4 +58,4 @@ jobs:
         with:
          files: ./Dev_ToolBox.zip
          repo-token: ${{ secrets.DEV_TOOL_TOKEN }}
-         release-tag: ${{ github.ref }}
+         release-tag: ${{ steps.get_version.outputs.version }}

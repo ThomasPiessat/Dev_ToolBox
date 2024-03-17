@@ -1,7 +1,0 @@
-D:\PullGit\Dev_ToolBox\Dev_ToolBox\bin\Release\net8.0-windows10.0.19041.0\publish\Dev_ToolBox.exe
-D:\PullGit\Dev_ToolBox\Dev_ToolBox\bin\Release\net8.0-windows10.0.19041.0\publish\Dev_ToolBox.dll
-D:\PullGit\Dev_ToolBox\Dev_ToolBox\bin\Release\net8.0-windows10.0.19041.0\publish\Dev_ToolBox.deps.json
-D:\PullGit\Dev_ToolBox\Dev_ToolBox\bin\Release\net8.0-windows10.0.19041.0\publish\Dev_ToolBox.runtimeconfig.json
-D:\PullGit\Dev_ToolBox\Dev_ToolBox\bin\Release\net8.0-windows10.0.19041.0\publish\Dev_ToolBox.pdb
-D:\PullGit\Dev_ToolBox\Dev_ToolBox\bin\Release\net8.0-windows10.0.19041.0\publish\Microsoft.Windows.SDK.NET.dll
-D:\PullGit\Dev_ToolBox\Dev_ToolBox\bin\Release\net8.0-windows10.0.19041.0\publish\WinRT.Runtime.dll

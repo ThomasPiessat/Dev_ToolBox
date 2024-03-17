@@ -9,8 +9,10 @@
       Title="QRCodeGeneratorPage">
     <StackPanel Margin="10">
         <TextBlock Text="QR Code Generator" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,10"/>
-
         <Grid>
+            <TextBox HorizontalAlignment="Center" Margin="0,53,0,0" x:Name="txtLink" TextWrapping="Wrap" AcceptsReturn="True" Text="Paste a link here" VerticalAlignment="Top" Width="120"/>
+            <Image x:Name="imgQRCode" Stretch="Uniform" Margin="0,0,0,-107" />
+            <Button Content="Generate QR Code" HorizontalAlignment="Center" VerticalAlignment="Top" Click="GenerateQRCodeButton_Click" Margin="0,28,0,0"/>
 
         </Grid>
     </StackPanel>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Dev_ToolBox")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c2a0ccd07a22f930efe7b1150bf80c9da2acdd3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d3c02376d4312563c8c6fc3c990164152c2759e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Dev_ToolBox")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Dev_ToolBox")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

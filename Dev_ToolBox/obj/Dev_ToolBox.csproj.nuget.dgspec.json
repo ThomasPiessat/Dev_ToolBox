@@ -53,11 +53,9 @@
               "target": "Package",
               "version": "[1.7.2, )"
             },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
+            "QRCoder": {
               "target": "Package",
-              "version": "[8.0.3, )",
-              "autoReferenced": true
+              "version": "[1.4.3, )"
             }
           },
           "imports": [

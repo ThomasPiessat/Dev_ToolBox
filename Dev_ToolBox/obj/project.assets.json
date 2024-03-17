@@ -1,12 +1,66 @@
 {
   "version": 3,
   "targets": {
-    "net8.0-windows10.0.19041": {},
-    "net8.0-windows10.0.19041/win-x64": {}
+    "net8.0-windows10.0.19041": {
+      "DiffPlex/1.7.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/DiffPlex.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/DiffPlex.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    },
+    "net8.0-windows10.0.19041/win-x64": {
+      "DiffPlex/1.7.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/DiffPlex.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/DiffPlex.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "DiffPlex/1.7.2": {
+      "sha512": "qJEjdxEDBWSFZGB8paBB9HDeJXHGlHlOXeGX3kbTuXWuOsgv2iSAEOOzo5V1/B39Vcxr9IVVrNKewRcX+rsn4g==",
+      "type": "package",
+      "path": "diffplex/1.7.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "diffplex.1.7.2.nupkg.sha512",
+        "diffplex.nuspec",
+        "diffplex_icon.png",
+        "lib/net35/DiffPlex.dll",
+        "lib/net35/DiffPlex.xml",
+        "lib/net40/DiffPlex.dll",
+        "lib/net40/DiffPlex.xml",
+        "lib/net6.0/DiffPlex.dll",
+        "lib/net6.0/DiffPlex.xml",
+        "lib/netstandard1.0/DiffPlex.dll",
+        "lib/netstandard1.0/DiffPlex.xml",
+        "lib/netstandard2.0/DiffPlex.dll",
+        "lib/netstandard2.0/DiffPlex.xml"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0-windows10.0.19041": []
+    "net8.0-windows10.0.19041": [
+      "DiffPlex >= 1.7.2"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\thoma\\.nuget\\packages\\": {},
@@ -56,6 +110,12 @@
     "frameworks": {
       "net8.0-windows10.0.19041": {
         "targetAlias": "net8.0-windows10.0.19041.0",
+        "dependencies": {
+          "DiffPlex": {
+            "target": "Package",
+            "version": "[1.7.2, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Dev_ToolBox
+namespace Dev_ToolBox.Pages.PercentageCalculator
 {
     /// <summary>
     /// Interaction logic for PercentageCalculatorPage.xaml
@@ -52,7 +52,7 @@ namespace Dev_ToolBox
 
                 if (secondValue != 0)
                 {
-                    double variation = ((secondValue - firstValue) / Math.Abs(secondValue)) * 100;
+                    double variation = ((firstValue * 100) / secondValue);
                     txtVariationResult.Text = $"Variation: {variation:F2}%";
                 }
                 else

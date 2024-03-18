@@ -1,5 +1,4 @@
-﻿using Dev_ToolBox.Pages.Calculator;
-using System.Text;
+﻿using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -9,6 +8,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Dev_ToolBox.Pages.Calculator;
+using Dev_ToolBox.Pages.PercentageCalculator;
+using Dev_ToolBox.Pages.StringConverter;
 
 namespace Dev_ToolBox
 {
@@ -44,6 +46,9 @@ namespace Dev_ToolBox
                         break;
                     case "QR Code Generator":
                         mainFrame.Navigate(new QRCodeGeneratorPage());
+                        break;
+                    case "String Converter":
+                        mainFrame.Navigate(new StringConverterPage());
                         break;
                         // Add cases for other tools as needed
                 }

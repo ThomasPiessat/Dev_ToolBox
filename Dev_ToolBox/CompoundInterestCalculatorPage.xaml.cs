@@ -39,9 +39,12 @@ namespace Dev_ToolBox
                 {
                     switch (cmbCompoundingFrequency.SelectedIndex)
                     {
-                        case 1: compoundingFrequency = 2; break; // Semi-Annually
-                        case 2: compoundingFrequency = 4; break; // Quarterly
-                        case 3: compoundingFrequency = 12; break; // Monthly
+                        case 1: compoundingFrequency = 2; // Semi-Annually
+                            break; 
+                        case 2: compoundingFrequency = 4; // Quarterly
+                            break; 
+                        case 3: compoundingFrequency = 12; // Monthly
+                            break; 
                     }
                 }
 

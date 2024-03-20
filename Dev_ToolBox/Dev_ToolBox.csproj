@@ -7,7 +7,12 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources\Icons\favicon.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Icons\favicon.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="DiffPlex" Version="1.7.2" />

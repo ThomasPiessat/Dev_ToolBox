@@ -17,6 +17,8 @@
             <ComboBoxItem Content="PascalCase"/>
             <ComboBoxItem Content="snake_case"/>
             <ComboBoxItem Content="kebab-case"/>
+            <ComboBoxItem Content="SCREAM-KEBAB"/>
+            <ComboBoxItem Content="CONSTANTS_CASE"/>
         </ComboBox>
         <Button Content="Convert" Click="Convert_Click" Width="100" Height="30"/>
         <TextBox x:Name="txtOutput" Grid.Row="0" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Margin="0,100,0,-90"/>

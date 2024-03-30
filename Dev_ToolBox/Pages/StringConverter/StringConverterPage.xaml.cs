@@ -38,6 +38,8 @@ namespace Dev_ToolBox.Pages.StringConverter
             //< ComboBoxItem Content = "PascalCase" />
             //< ComboBoxItem Content = "snake_case" />
             //< ComboBoxItem Content = "kebab-case" />
+            //< ComboBoxItem Content = "SCREAM-KEBAB" />
+            //< ComboBoxItem Content = "CONSTANTS_CASE" />
             if (cmbStringConvert.SelectedItem != null)
             {
                 switch (cmbStringConvert.SelectedIndex)
@@ -60,6 +62,12 @@ namespace Dev_ToolBox.Pages.StringConverter
                     case 5:
                         ToKebabCase();
                         break;
+                    case 6:
+                        ToScreamKebab();
+                        break;
+                    case 7:
+                        ToConstantsCase();
+                        break;
                     default:
                         break;
                 }
@@ -67,7 +75,7 @@ namespace Dev_ToolBox.Pages.StringConverter
         }
 
         private void ToLowerCase()
-        {            
+        {
             txtOutput.Text = input.ToLower();
         }
 
@@ -95,16 +103,25 @@ namespace Dev_ToolBox.Pages.StringConverter
 
         private void ToSnakeCase()
         {
-            string pattern = @"(?<!^)(?=[A-Z])";
-            string replacement = "_";
-            string result = Regex.Replace(input, pattern, replacement);
-            txtOutput.Text = result.ToLower();
+            string result = input.Replace(" ", "_").ToLower();
+            txtOutput.Text = result;
         }
 
         private void ToKebabCase()
         {
-            throw new NotImplementedException();
+            string result = input.Replace(" ", "-").ToLower();
+            txtOutput.Text = result;
+        }
+        private void ToScreamKebab()
+        {
+            string result = input.Replace(" ", "-").ToUpper();
+            txtOutput.Text = result;
         }
 
+        private void ToConstantsCase()
+        {
+            string result = input.Replace(" ", "_").ToUpper();
+            txtOutput.Text = result;
+        }
     }
 }

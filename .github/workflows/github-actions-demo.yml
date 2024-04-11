@@ -38,9 +38,9 @@ jobs:
         run: Compress-Archive -Path ./Dev_ToolBox/bin/Release -DestinationPath ./Dev_ToolBox.zip
         shell: powershell
 
-      - name: Get version
-        id: set_version
-        run: echo "version=v0.2.3-beta" >> $GITHUB_OUTPUT
+      - name: Version as date
+        id: get_version
+        run: echo "::set-output name=version::$(Get-Date -Format 'yyyy.MM.dd.HHmmss')"
 
       - name: Create Release
         id: create_release
@@ -48,8 +48,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.DEV_TOOL_TOKEN }}
         with:
-          tag_name: ${{ steps.set_version.outputs.version }}
-          release_name: Release ${{ steps.set_version.outputs.version }}
+          tag_name: ${{ steps.get_version.outputs.version }}
+          release_name: Release ${{ steps.get_version.outputs.version }}
           draft: false
           prerelease: false
 

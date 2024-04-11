@@ -38,9 +38,18 @@ jobs:
         run: Compress-Archive -Path ./Dev_ToolBox/bin/Release -DestinationPath ./Dev_ToolBox.zip
         shell: powershell
 
-      - name: Version as date
+      - name: Get version
         id: get_version
-        run: echo "::set-output name=version::$(Get-Date -Format 'yyyy.MM.dd.HHmmss')"
+        run: |
+          # Retrieve the latest tag
+          latest_tag=$(git describe --tags --abbrev=0)
+          # Split version into parts
+          IFS='.' read -r major minor patch <<< "$latest_tag"
+          # Increment patch version
+          patch=$((patch + 1))
+          # Combine back the version
+          new_version="$major.$minor.$patch"
+          echo "::set-output name=version::$new_version"
 
       - name: Create Release
         id: create_release

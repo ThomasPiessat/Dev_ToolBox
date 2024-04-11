@@ -40,16 +40,7 @@ jobs:
 
       - name: Get version
         id: get_version
-        run: |
-          # Retrieve the latest tag
-          latest_tag=$(git describe --tags --abbrev=0)
-          # Split version into parts
-          IFS='.' read -r major minor patch <<< "$latest_tag"
-          # Increment patch version
-          patch=$((patch + 1))
-          # Combine back the version
-          new_version="$major.$minor.$patch"
-          echo "::set-output name=version::$new_version"
+        run: echo "::set-output name=version::v0.1.0-beta"
 
       - name: Create Release
         id: create_release

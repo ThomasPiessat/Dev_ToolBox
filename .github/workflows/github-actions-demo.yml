@@ -40,7 +40,7 @@ jobs:
 
       - name: Get version
         id: set_version
-        run: echo "version=v0.1.1-beta" >> $GITHUB_OUTPUT
+        run: echo "version=v0.2.3-beta" >> $GITHUB_OUTPUT
 
       - name: Create Release
         id: create_release

@@ -13,9 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DiffPlex;
 using DiffPlex.DiffBuilder;
 using DiffPlex.DiffBuilder.Model;
+using DiffPlex.Wpf;
 
 namespace Dev_ToolBox
 {
@@ -29,67 +29,23 @@ namespace Dev_ToolBox
             InitializeComponent();
         }
 
-        private void CompareButton_Click(object sender, RoutedEventArgs e)
+        private void WindowButton_Click(object sender, RoutedEventArgs e)
         {
-            string InputText = txtInput.Text;
-            string OutputText = txtOutput.Text;
-
-            SideBySideDiffModel diffModel = GenerateDiff(InputText, OutputText);
-
-            //Display the differences
-            DisplayDiff(diffModel);
-        }
-
-        private SideBySideDiffModel GenerateDiff(string inputText, string outputText)
-        {
-            var differ = new Differ();
-            var builder = new SideBySideDiffBuilder(differ);
-            var diffModel = builder.BuildDiffModel(inputText, outputText);
-
-            return diffModel;
-        }
-
-        private void DisplayDiff(SideBySideDiffModel diffModel)
-        {
-            txtInput.Clear();
-            txtOutput.Clear();
-
-            foreach (var line in diffModel.OldText.Lines)
+            var has = false;
+            foreach (var w in Application.Current.Windows)
             {
-                //    if(line.Type == ChangeType.Deleted)
-                //    {
-                //        txtInput.AppendText(line.Text + "\r\n");
-                //        txtInput.Background = System.Windows.Media.Brushes.LightSalmon;
-                //    }
-                //    txtInput.AppendText(line.Text + "\r\n");
-                //}
-
-                //foreach(var line in diffModel.NewText.Lines)
-                //{
-                //    if( line.Type == ChangeType.Inserted) 
-                //    {
-                //        txtOutput.AppendText(line.Text + "\r\n");
-                //        txtOutput.Background = System.Windows.Media.Brushes.LightGreen;
-                //    }
-                //    txtOutput.AppendText(line.Text + "\r\n");
-                //}
-                if (line.Type == ChangeType.Deleted)
+                if (w is DiffWindow dw)
                 {
-                    txtInput.AppendText(line.Text + "\r\n");
-                    txtInput.Background = System.Windows.Media.Brushes.LightSalmon;
+                    dw.Activate();
+                    has = true;
+                    break;
                 }
-                else if (line.Type == ChangeType.Inserted)
-                {
-                    txtOutput.AppendText(line.Text + "\r\n");
-                    txtOutput.Background = System.Windows.Media.Brushes.LightGreen;
-                }
-                else
-                {
-                    txtInput.AppendText(line.Text + "\r\n");
-                    txtOutput.AppendText(line.Text + "\r\n");
-                }
-
             }
+
+            if (has) return;
+            var win = new DiffWindow();
+            win.OpenFileOnBoth();
+            win.Show();
         }
     }
 }

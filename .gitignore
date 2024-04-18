@@ -1,5 +1,4 @@
 .vs/
-Dev_ToolBox/obj/Debug/
-Dev_ToolBox/bin/Debug/
-Dev_ToolBox/bin/Release/
+obj/
+bin/
 *.sln

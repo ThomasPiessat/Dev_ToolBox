@@ -15,6 +15,63 @@
           }
         }
       },
+      "DiffPlex.Wpf/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "DiffPlex": "1.7.1"
+        },
+        "compile": {
+          "lib/net6.0-windows7.0/DiffPlex.Wpf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/DiffPlex.Wpf.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ],
+        "resource": {
+          "lib/net6.0-windows7.0/en/DiffPlex.Wpf.resources.dll": {
+            "locale": "en"
+          },
+          "lib/net6.0-windows7.0/es/DiffPlex.Wpf.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0-windows7.0/fr/DiffPlex.Wpf.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0-windows7.0/ja/DiffPlex.Wpf.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net6.0-windows7.0/ko/DiffPlex.Wpf.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net6.0-windows7.0/pt/DiffPlex.Wpf.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net6.0-windows7.0/zh-Hans/DiffPlex.Wpf.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net6.0-windows7.0/zh-Hant/DiffPlex.Wpf.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        },
+        "contentFiles": {
+          "contentFiles/any/net6.0-windows7.0/DiffPlex.ico": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/net6.0-windows7.0/License.txt": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        }
+      },
       "Microsoft.Win32.SystemEvents/6.0.0": {
         "type": "package",
         "compile": {
@@ -93,6 +150,63 @@
           }
         }
       },
+      "DiffPlex.Wpf/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "DiffPlex": "1.7.1"
+        },
+        "compile": {
+          "lib/net6.0-windows7.0/DiffPlex.Wpf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/DiffPlex.Wpf.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ],
+        "resource": {
+          "lib/net6.0-windows7.0/en/DiffPlex.Wpf.resources.dll": {
+            "locale": "en"
+          },
+          "lib/net6.0-windows7.0/es/DiffPlex.Wpf.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0-windows7.0/fr/DiffPlex.Wpf.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0-windows7.0/ja/DiffPlex.Wpf.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net6.0-windows7.0/ko/DiffPlex.Wpf.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net6.0-windows7.0/pt/DiffPlex.Wpf.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net6.0-windows7.0/zh-Hans/DiffPlex.Wpf.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net6.0-windows7.0/zh-Hant/DiffPlex.Wpf.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        },
+        "contentFiles": {
+          "contentFiles/any/net6.0-windows7.0/DiffPlex.ico": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/net6.0-windows7.0/License.txt": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        }
+      },
       "Microsoft.Win32.SystemEvents/6.0.0": {
         "type": "package",
         "compile": {
@@ -164,6 +278,56 @@
         "lib/netstandard1.0/DiffPlex.xml",
         "lib/netstandard2.0/DiffPlex.dll",
         "lib/netstandard2.0/DiffPlex.xml"
+      ]
+    },
+    "DiffPlex.Wpf/1.4.0": {
+      "sha512": "p1rmQwFgZL4pdW6szA4MUnItU3piJe4QoHHV40xqQPR93O/iq+hhalH0JN1JiyZykrjoIOQxWrJmwrtLEPjFhA==",
+      "type": "package",
+      "path": "diffplex.wpf/1.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/DiffPlex.ico",
+        "content/License.txt",
+        "contentFiles/any/net46/DiffPlex.ico",
+        "contentFiles/any/net46/License.txt",
+        "contentFiles/any/net48/DiffPlex.ico",
+        "contentFiles/any/net48/License.txt",
+        "contentFiles/any/net6.0-windows7.0/DiffPlex.ico",
+        "contentFiles/any/net6.0-windows7.0/License.txt",
+        "diffplex.wpf.1.4.0.nupkg.sha512",
+        "diffplex.wpf.nuspec",
+        "diffplex_icon.png",
+        "lib/net46/DiffPlex.Wpf.dll",
+        "lib/net46/DiffPlex.Wpf.xml",
+        "lib/net46/en/DiffPlex.Wpf.resources.dll",
+        "lib/net46/es/DiffPlex.Wpf.resources.dll",
+        "lib/net46/fr/DiffPlex.Wpf.resources.dll",
+        "lib/net46/ja/DiffPlex.Wpf.resources.dll",
+        "lib/net46/ko/DiffPlex.Wpf.resources.dll",
+        "lib/net46/pt/DiffPlex.Wpf.resources.dll",
+        "lib/net46/zh-Hans/DiffPlex.Wpf.resources.dll",
+        "lib/net46/zh-Hant/DiffPlex.Wpf.resources.dll",
+        "lib/net48/DiffPlex.Wpf.dll",
+        "lib/net48/DiffPlex.Wpf.xml",
+        "lib/net48/en/DiffPlex.Wpf.resources.dll",
+        "lib/net48/es/DiffPlex.Wpf.resources.dll",
+        "lib/net48/fr/DiffPlex.Wpf.resources.dll",
+        "lib/net48/ja/DiffPlex.Wpf.resources.dll",
+        "lib/net48/ko/DiffPlex.Wpf.resources.dll",
+        "lib/net48/pt/DiffPlex.Wpf.resources.dll",
+        "lib/net48/zh-Hans/DiffPlex.Wpf.resources.dll",
+        "lib/net48/zh-Hant/DiffPlex.Wpf.resources.dll",
+        "lib/net6.0-windows7.0/DiffPlex.Wpf.dll",
+        "lib/net6.0-windows7.0/DiffPlex.Wpf.xml",
+        "lib/net6.0-windows7.0/en/DiffPlex.Wpf.resources.dll",
+        "lib/net6.0-windows7.0/es/DiffPlex.Wpf.resources.dll",
+        "lib/net6.0-windows7.0/fr/DiffPlex.Wpf.resources.dll",
+        "lib/net6.0-windows7.0/ja/DiffPlex.Wpf.resources.dll",
+        "lib/net6.0-windows7.0/ko/DiffPlex.Wpf.resources.dll",
+        "lib/net6.0-windows7.0/pt/DiffPlex.Wpf.resources.dll",
+        "lib/net6.0-windows7.0/zh-Hans/DiffPlex.Wpf.resources.dll",
+        "lib/net6.0-windows7.0/zh-Hant/DiffPlex.Wpf.resources.dll"
       ]
     },
     "Microsoft.Win32.SystemEvents/6.0.0": {
@@ -259,6 +423,7 @@
   "projectFileDependencyGroups": {
     "net8.0-windows10.0.19041": [
       "DiffPlex >= 1.7.2",
+      "DiffPlex.Wpf >= 1.4.0",
       "QRCoder >= 1.4.3"
     ]
   },
@@ -314,6 +479,10 @@
           "DiffPlex": {
             "target": "Package",
             "version": "[1.7.2, )"
+          },
+          "DiffPlex.Wpf": {
+            "target": "Package",
+            "version": "[1.4.0, )"
           },
           "QRCoder": {
             "target": "Package",

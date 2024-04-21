@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Windows.ApplicationModel.Background;
 
 namespace Dev_ToolBox.Pages.Calculator
 {
@@ -35,6 +36,7 @@ namespace Dev_ToolBox.Pages.Calculator
             string digit = (sender as Button).Content.ToString();
             currentInput += digit;
             txtDisplay.Text = currentInput;
+            calcDisplay.Text = currentInput;
         }
 
         private void OperatorButton_Click(object sender, RoutedEventArgs e)
@@ -46,6 +48,8 @@ namespace Dev_ToolBox.Pages.Calculator
                 currentInput = "";
                 lastOperator = operatorSymbol;
                 isOperatorClicked = true;
+                txtDisplay.Text = operatorSymbol;
+                calcDisplay.Text += operatorSymbol;
             }
             else
             {
@@ -68,6 +72,7 @@ namespace Dev_ToolBox.Pages.Calculator
             lastOperator = "";
             isOperatorClicked = false;
             txtDisplay.Text = "";
+            calcDisplay.Text = "";
         }
 
         private void Calculate()
@@ -98,7 +103,7 @@ namespace Dev_ToolBox.Pages.Calculator
                     break;
             }
             txtDisplay.Text = currentValue.ToString();
-            currentInput = currentValue.ToString();
+            calcDisplay.Text = currentValue.ToString();
         }
     }
 }

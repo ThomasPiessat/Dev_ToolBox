@@ -9,9 +9,10 @@
       Title="CalculatorPage">
     <StackPanel Margin="10">
         <TextBlock Text="Calculator" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,10"/>
-        <Grid Margin="20" Height="200">
-            <TextBox x:Name="txtDisplay" TextAlignment="Right" FontSize="24" IsReadOnly="True" Margin="0,-10,0,160"/>
-            <UniformGrid Rows="4" Columns="4" Margin="0,40,0,0">
+        <Grid Margin="20" Height="240">
+            <TextBox x:Name="txtDisplay" TextAlignment="Right" FontSize="24" IsReadOnly="True" Margin="0,10,0,160"/>
+            <TextBox x:Name="calcDisplay" HorizontalAlignment="Right" TextAlignment="Right" Margin="0,-10,0,0" TextWrapping="Wrap" IsReadOnly="True" VerticalAlignment="Top" Width="120"/>
+            <UniformGrid Rows="4" Columns="4" Margin="0,60,0,0">
                 <Button Content="7" Click="NumberButton_Click"/>
                 <Button Content="8" Click="NumberButton_Click"/>
                 <Button Content="9" Click="NumberButton_Click"/>

@@ -11,6 +11,7 @@ using System.Windows.Shapes;
 using Dev_ToolBox.Pages.Calculator;
 using Dev_ToolBox.Pages.PercentageCalculator;
 using Dev_ToolBox.Pages.StringConverter;
+using Dev_ToolBox.Pages.URLParser;
 
 namespace Dev_ToolBox
 {
@@ -49,6 +50,9 @@ namespace Dev_ToolBox
                         break;
                     case "String Converter":
                         mainFrame.Navigate(new StringConverterPage());
+                        break;
+                    case "URL Parser":
+                        mainFrame.Navigate(new URLParserPage());
                         break;
                         // Add cases for other tools as needed
                 }

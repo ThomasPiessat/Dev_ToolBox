@@ -24,4 +24,10 @@
     <PackageReference Include="QRCoder" Version="1.4.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Pages\URLParser\URLParserPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

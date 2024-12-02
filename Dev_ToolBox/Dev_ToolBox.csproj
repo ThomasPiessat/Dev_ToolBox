@@ -25,6 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Pages\RegexChecker\RegexCheckerPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\URLParser\URLParserPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

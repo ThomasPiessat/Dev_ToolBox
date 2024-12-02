@@ -36,6 +36,9 @@
     <Page Update="Pages\Calculator\CalculatorPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\RegexChecker\RegexCheckerPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\StringConverter\StringConverterPage.xaml">
       <SubType>Designer</SubType>
     </Page>

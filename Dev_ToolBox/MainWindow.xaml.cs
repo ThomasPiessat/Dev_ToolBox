@@ -10,6 +10,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Dev_ToolBox.Pages.Calculator;
 using Dev_ToolBox.Pages.PercentageCalculator;
+using Dev_ToolBox.Pages.RegexChecker;
 using Dev_ToolBox.Pages.StringConverter;
 using Dev_ToolBox.Pages.URLParser;
 
@@ -27,7 +28,7 @@ namespace Dev_ToolBox
 
         private void ToolSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ListBoxItem selectedTool = lstTools.SelectedItem as ListBoxItem;
+            ListBoxItem? selectedTool = lstTools.SelectedItem as ListBoxItem;
 
             if (selectedTool != null)
             {
@@ -50,6 +51,9 @@ namespace Dev_ToolBox
                         break;
                     case "String Converter":
                         mainFrame.Navigate(new StringConverterPage());
+                        break;                    
+                    case "Regex Checker":
+                        mainFrame.Navigate(new RegexCheckerPage());
                         break;
                     case "URL Parser":
                         mainFrame.Navigate(new URLParserPage());

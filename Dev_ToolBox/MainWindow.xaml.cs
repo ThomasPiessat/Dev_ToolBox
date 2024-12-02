@@ -12,6 +12,7 @@ using Dev_ToolBox.Pages.Calculator;
 using Dev_ToolBox.Pages.PercentageCalculator;
 using Dev_ToolBox.Pages.RegexChecker;
 using Dev_ToolBox.Pages.StringConverter;
+using Dev_ToolBox.Pages.TimeConverter;
 using Dev_ToolBox.Pages.URLParser;
 
 namespace Dev_ToolBox
@@ -52,6 +53,9 @@ namespace Dev_ToolBox
                     case "String Converter":
                         mainFrame.Navigate(new StringConverterPage());
                         break;                    
+                    case "Time Converter":
+                        mainFrame.Navigate(new TimeConverterPage());
+                        break;
                     case "Regex Checker":
                         mainFrame.Navigate(new RegexCheckerPage());
                         break;

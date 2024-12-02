@@ -28,6 +28,9 @@
     <Compile Update="Pages\RegexChecker\RegexCheckerPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\StringConverter\StringConverterPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\URLParser\URLParserPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

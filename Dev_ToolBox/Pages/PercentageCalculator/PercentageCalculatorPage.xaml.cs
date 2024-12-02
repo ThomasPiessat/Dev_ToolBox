@@ -52,7 +52,7 @@ namespace Dev_ToolBox.Pages.PercentageCalculator
 
                 if (secondValue != 0)
                 {
-                    double variation = ((firstValue * 100) / secondValue);
+                    double variation = ((secondValue - firstValue) / firstValue) * 100;
                     txtVariationResult.Text = $"Variation: {variation:F2}%";
                 }
                 else

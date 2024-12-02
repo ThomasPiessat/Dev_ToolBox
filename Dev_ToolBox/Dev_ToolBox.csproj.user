@@ -16,7 +16,7 @@
     <Compile Update="Pages\Calculator\CalculatorPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\StringConverter\StringConverterPage.xaml.cs">
+    <Compile Update="Pages\TimeConverter\TimeConverterPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="QRCodeGeneratorPage.xaml.cs">
@@ -40,6 +40,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\StringConverter\StringConverterPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\TimeConverter\TimeConverterPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\URLParser\URLParserPage.xaml">

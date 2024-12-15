@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="CompoundInterestCalculatorPage.xaml.cs">
+    <Compile Update="Pages\CompoundInterestCalculator\CompoundInterestCalculatorPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="DiffViewerPage.xaml.cs">
@@ -19,12 +19,15 @@
     <Compile Update="Pages\TimeConverter\TimeConverterPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="QRCodeGeneratorPage.xaml.cs">
+    <Compile Update="Pages\QRCodeGenerator\QRCodeGeneratorPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\TitleControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="CompoundInterestCalculatorPage.xaml">
+    <Page Update="Pages\CompoundInterestCalculator\CompoundInterestCalculatorPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="DiffViewerPage.xaml">
@@ -48,7 +51,10 @@
     <Page Update="Pages\URLParser\URLParserPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="QRCodeGeneratorPage.xaml">
+    <Page Update="Pages\QRCodeGenerator\QRCodeGeneratorPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\TitleControl.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

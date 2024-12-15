@@ -4,28 +4,32 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Dev_ToolBox.Pages.URLParser"
+      xmlns:local1="clr-namespace:Dev_ToolBox.Controls"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="URLParserPage">
-    <StackPanel Margin="10">
-        <TextBlock Text="URL Parser" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,10"/>
-
-        <TextBox x:Name="txtUrlInput" Grid.Row="0" Margin="0,0,0,10" Text="Enter a URL" />
-        <Button x:Name="btnParseUrl" Grid.Row="1" Content="Parse URL" Click="BtnParseUrl_Click" />
-        <StackPanel Grid.Row="2" Margin="0,10,0,0">
-            <TextBlock Text="Parsed Components:" FontWeight="Bold" Margin="0,0,0,10" />
-            <TextBlock Text="Scheme:" />
-            <TextBlock x:Name="txtScheme" Margin="20,0,0,10" />
-            <TextBlock Text="Host:" />
-            <TextBlock x:Name="txtHost" Margin="20,0,0,10" />
-            <TextBlock Text="Port:" />
-            <TextBlock x:Name="txtPort" Margin="20,0,0,10" />
-            <TextBlock Text="Path:" />
-            <TextBlock x:Name="txtPath" Margin="20,0,0,10" />
-            <TextBlock Text="Query Parameters:" />
-            <TextBlock x:Name="txtQuery" Margin="20,0,0,10" />
-            <TextBlock Text="Fragment:" />
-            <TextBlock x:Name="txtFragment" Margin="20,0,0,10" />
+    <Grid>
+        <local1:TitleControl ToolName="Time Converter" 
+                        HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+        <!-- Content -->
+        <StackPanel Margin="10,60,10,10">
+            <TextBox x:Name="txtUrlInput" Grid.Row="0" Margin="0,0,0,10" Text="Enter a URL" />
+            <Button x:Name="btnParseUrl" Grid.Row="1" Content="Parse URL" Click="BtnParseUrl_Click" />
+            <StackPanel Grid.Row="2" Margin="0,10,0,0">
+                <TextBlock Text="Parsed Components:" FontWeight="Bold" Margin="0,0,0,10" />
+                <TextBlock Text="Scheme:" />
+                <TextBlock x:Name="txtScheme" Margin="20,0,0,10" />
+                <TextBlock Text="Host:" />
+                <TextBlock x:Name="txtHost" Margin="20,0,0,10" />
+                <TextBlock Text="Port:" />
+                <TextBlock x:Name="txtPort" Margin="20,0,0,10" />
+                <TextBlock Text="Path:" />
+                <TextBlock x:Name="txtPath" Margin="20,0,0,10" />
+                <TextBlock Text="Query Parameters:" />
+                <TextBlock x:Name="txtQuery" Margin="20,0,0,10" />
+                <TextBlock Text="Fragment:" />
+                <TextBlock x:Name="txtFragment" Margin="20,0,0,10" />
+            </StackPanel>
         </StackPanel>
-    </StackPanel>
+    </Grid>
 </Page>

@@ -4,33 +4,38 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Dev_ToolBox.Pages.TimeConverter"
+      xmlns:local1="clr-namespace:Dev_ToolBox.Controls"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="TimeConverterPage">
-    <StackPanel Margin="10">
-        <TextBlock Text="TimeConverter" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,10"/>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
-            <TextBox x:Name="txtInputTime" Width="100" Margin="0,0,10,0" Text="Enter Time" />
-            <ComboBox x:Name="cmbInputUnit" Width="150" Margin="0,0,10,0">
-                <ComboBoxItem Content="Seconds" />
-                <ComboBoxItem Content="Minutes" />
-                <ComboBoxItem Content="Hours" />
-                <ComboBoxItem Content="Days" />
-                <ComboBoxItem Content="Weeks" />
-            </ComboBox>
-            <TextBlock Text="to" VerticalAlignment="Center" Margin="0,0,10,0" />
-            <ComboBox x:Name="cmbOutputUnit" Width="150">
-                <ComboBoxItem Content="Seconds" />
-                <ComboBoxItem Content="Minutes" />
-                <ComboBoxItem Content="Hours" />
-                <ComboBoxItem Content="Days" />
-                <ComboBoxItem Content="Weeks" />
-            </ComboBox>
+    <Grid>
+        <local1:TitleControl ToolName="Time Converter" 
+                        HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+        <!-- Content -->
+        <StackPanel Margin="10,60,10,10">
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBox x:Name="txtInputTime" Width="100" Margin="0,0,10,0" Text="Enter Time" />
+                <ComboBox x:Name="cmbInputUnit" Width="150" Margin="0,0,10,0">
+                    <ComboBoxItem Content="Seconds" />
+                    <ComboBoxItem Content="Minutes" />
+                    <ComboBoxItem Content="Hours" />
+                    <ComboBoxItem Content="Days" />
+                    <ComboBoxItem Content="Weeks" />
+                </ComboBox>
+                <TextBlock Text="to" VerticalAlignment="Center" Margin="0,0,10,0" />
+                <ComboBox x:Name="cmbOutputUnit" Width="150">
+                    <ComboBoxItem Content="Seconds" />
+                    <ComboBoxItem Content="Minutes" />
+                    <ComboBoxItem Content="Hours" />
+                    <ComboBoxItem Content="Days" />
+                    <ComboBoxItem Content="Weeks" />
+                </ComboBox>
+            </StackPanel>
+
+            <Button x:Name="btnConvert" Content="Convert" Grid.Row="1" Click="BtnConvert_Click" Margin="0,0,0,10" />
+
+            <TextBlock Grid.Row="2" FontWeight="Bold" FontSize="16" Text="Converted Time:" Margin="0,0,0,10" />
+            <TextBlock x:Name="txtConvertedTime" Grid.Row="3" FontSize="16" />
         </StackPanel>
-
-        <Button x:Name="btnConvert" Content="Convert" Grid.Row="1" Click="BtnConvert_Click" Margin="0,0,0,10" />
-
-        <TextBlock Grid.Row="2" FontWeight="Bold" FontSize="16" Text="Converted Time:" Margin="0,0,0,10" />
-        <TextBlock x:Name="txtConvertedTime" Grid.Row="3" FontSize="16" />    
-    </StackPanel>
+    </Grid>
 </Page>

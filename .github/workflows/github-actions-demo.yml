@@ -40,7 +40,7 @@ jobs:
 
       - name: Version as date
         id: get_version
-        run: echo "::set-output name=version::$(Get-Date -Format 'yyyy.MM.dd.HHmmss')"
+        run: echo "::set-output name=version::$(Get-Date -Format 'yyyy.MM.dd')"
 
       - name: Create Release
         id: create_release

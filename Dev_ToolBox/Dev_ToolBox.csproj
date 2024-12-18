@@ -8,6 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Resources\Icons\favicon.ico</ApplicationIcon>
+    <PublishSingleFile>true</PublishSingleFile> <!-- Enable single-file publishing -->
+    <SelfContained>true</SelfContained>         <!-- Create a self-contained executable -->
   </PropertyGroup>
 
   <ItemGroup>

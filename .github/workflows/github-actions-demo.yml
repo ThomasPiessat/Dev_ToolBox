@@ -55,18 +55,26 @@ jobs:
         id: get_version
         run: echo "::set-output name=version::$(Get-Date -Format 'yyyy.MM.dd')"
 
-      # Create a GitHub Release
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
-        with:
-            tag_name: ${{ steps.get_version.outputs.version }}
-            #release_name: Release ${{ steps.get_version.outputs.version }}
-            draft: false
-            prerelease: false
-            files: |
-              Output\Dev_ToolBox_Setup.exe
+        id: create_release
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.DEV_TOOL_TOKEN }}
+        with:
+          tag_name: ${{ steps.get_version.outputs.version }}
+          release_name: Release ${{ steps.get_version.outputs.version }}
+          draft: false
+          prerelease: false
+  
+      - name: Upload Installer
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.DEV_TOOL_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "bin/Release/net8.0-windows10.0.19041.0/publish/Dev_ToolBox_Setup.exe"
+          asset_name: "Dev_ToolBox_Setup.exe"
+          asset_content_type: application/vnd.microsoft.portable-executable
 
       # - name: Zip
       #   run: Compress-Archive -Path ./Dev_ToolBox/bin/Release -DestinationPath ./Dev_ToolBox.zip

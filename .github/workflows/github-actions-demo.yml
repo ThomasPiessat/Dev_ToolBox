@@ -51,13 +51,6 @@ jobs:
           Invoke-WebRequest -Uri https://jrsoftware.org/download.php/is.exe -OutFile is.exe
           Start-Process -Wait -FilePath .\is.exe -ArgumentList '/VERYSILENT', '/DIR="C:\InnoSetup"'
 
-      # Create the Installer
-      - name: Create Installer
-        run: |
-          "C:\InnoSetup\ISCC.exe" setup.iss
-        env:
-          PATH: ${{ runner.temp }};C:\InnoSetup
-
       # Upload the Installer to GitHub Release
       - name: Upload Installer to GitHub Release
         uses: actions/upload-artifact@v3

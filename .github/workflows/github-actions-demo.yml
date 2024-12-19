@@ -1,4 +1,4 @@
-name: Build WPF Application and Release
+name: Build and Create Installer
 
 on:
   push:
@@ -17,45 +17,68 @@ jobs:
         id-token: write
         contents: read
     steps:
+      # Checkout the repository
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      # Setup .NET  
       - name: Setup .NET Core SDK 8.x
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.x
 
+      # Restore NuGet packages
       - name: Restore
         run: dotnet restore ${{ env.PROJECT_PATH }}
 
+      # Build the application
       - name: Build
         run: dotnet build ${{ env.PROJECT_PATH }} -c Release --no-restore
 
       - name: Publish
         run: dotnet publish ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-x64 -p:PublishSingleFile=true --no-build
 
-      - name: Zip
-        run: Compress-Archive -Path ./Dev_ToolBox/bin/Release -DestinationPath ./Dev_ToolBox.zip
-        shell: powershell
+      # Install Inno Setup
+      - name: Install Inno Setup
+        run: |
+          Invoke-WebRequest -Uri https://jrsoftware.org/download.php/is.exe -OutFile is.exe
+          Start-Process -Wait -FilePath is.exe /VERYSILENT /DIR="C:\InnoSetup"
 
-      - name: Version as date
-        id: get_version
-        run: echo "::set-output name=version::$(Get-Date -Format 'yyyy.MM.dd')"
-
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
+      # Create the Installer
+      - name: Create Installer
+        run: |
+          "C:\InnoSetup\ISCC.exe" setup.iss
         env:
-          GITHUB_TOKEN: ${{ secrets.DEV_TOOL_TOKEN }}
-        with:
-          tag_name: ${{ steps.get_version.outputs.version }}
-          release_name: Release ${{ steps.get_version.outputs.version }}
-          draft: false
-          prerelease: false
+          PATH: ${{ runner.temp }};C:\InnoSetup
 
-      - name: Add asset
-        uses: AButler/upload-release-assets@v3.0
+      # Upload the Installer to GitHub Release
+      - name: Upload Installer to GitHub Release
+        uses: actions/upload-artifact@v3
         with:
-         files: ./Dev_ToolBox.zip
-         repo-token: ${{ secrets.DEV_TOOL_TOKEN }}
-         release-tag: ${{ steps.get_version.outputs.version }}
+          name: Dev_ToolBox_Setup
+          path: Output\Dev_ToolBox_Setup.exe
+      # - name: Zip
+      #   run: Compress-Archive -Path ./Dev_ToolBox/bin/Release -DestinationPath ./Dev_ToolBox.zip
+      #   shell: powershell
+
+      # - name: Version as date
+      #   id: get_version
+      #   run: echo "::set-output name=version::$(Get-Date -Format 'yyyy.MM.dd')"
+
+      # - name: Create Release
+      #   id: create_release
+      #   uses: actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.DEV_TOOL_TOKEN }}
+      #   with:
+      #     tag_name: ${{ steps.get_version.outputs.version }}
+      #     release_name: Release ${{ steps.get_version.outputs.version }}
+      #     draft: false
+      #     prerelease: false
+
+      # - name: Add asset
+      #   uses: AButler/upload-release-assets@v3.0
+      #   with:
+      #    files: ./Dev_ToolBox.zip
+      #    repo-token: ${{ secrets.DEV_TOOL_TOKEN }}
+      #    release-tag: ${{ steps.get_version.outputs.version }}

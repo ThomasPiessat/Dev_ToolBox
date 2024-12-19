@@ -51,12 +51,20 @@ jobs:
         env:
           PATH: ${{ runner.temp }};C:\InnoSetup
 
+      - name: Version as date
+        id: get_version
+        run: echo "::set-output name=version::$(Get-Date -Format 'yyyy.MM.dd')"
+
       # Create a GitHub Release
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          files: |
-            Output\Dev_ToolBox_Setup.exe
+            tag_name: ${{ steps.get_version.outputs.version }}
+            #release_name: Release ${{ steps.get_version.outputs.version }}
+            draft: false
+            prerelease: false
+            files: |
+              Output\Dev_ToolBox_Setup.exe
         env:
           GITHUB_TOKEN: ${{ secrets.DEV_TOOL_TOKEN }}
 

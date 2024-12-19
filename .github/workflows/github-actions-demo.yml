@@ -38,25 +38,28 @@ jobs:
       - name: Publish
         run: dotnet publish ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-x64 -p:PublishSingleFile=true --no-build
 
-        
-      # - name: Compile .ISS to .EXE Installer
-      #   uses: Minionguyjpro/Inno-Setup-Action@v1.2.2
-      #   with:
-      #     path: setup.iss
-      #     options: /O+
-
       # Install Inno Setup
       - name: Install Inno Setup
         run: |
           Invoke-WebRequest -Uri https://jrsoftware.org/download.php/is.exe -OutFile is.exe
           Start-Process -Wait -FilePath .\is.exe -ArgumentList '/VERYSILENT', '/DIR="C:\InnoSetup"'
 
-      # Upload the Installer to GitHub Release
-      - name: Upload Installer to GitHub Release
-        uses: actions/upload-artifact@v3
+      # Create Installer
+      - name: Create Installer
+        run: |
+          "C:\InnoSetup\ISCC.exe" setup.iss
+        env:
+          PATH: ${{ runner.temp }};C:\InnoSetup
+
+      # Create a GitHub Release
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
         with:
-          name: Dev_ToolBox_Setup
-          path: Output\Dev_ToolBox_Setup.exe
+          files: |
+            Output\Dev_ToolBox_Setup.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.DEV_TOOL_TOKEN }}
+
       # - name: Zip
       #   run: Compress-Archive -Path ./Dev_ToolBox/bin/Release -DestinationPath ./Dev_ToolBox.zip
       #   shell: powershell

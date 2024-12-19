@@ -47,7 +47,7 @@ jobs:
       # Create Installer
       - name: Create Installer
         run: |
-          "C:\InnoSetup\ISCC.exe" Dev_toolBox/setup.iss
+          "C:\InnoSetup\ISCC.exe" "Dev_toolBox/setup.iss"
         env:
           PATH: ${{ runner.temp }};C:\InnoSetup
 

@@ -36,7 +36,7 @@ jobs:
         run: dotnet build ${{ env.PROJECT_PATH }} -c Release --no-restore
 
       - name: Publish
-        run: dotnet publish -c Release -r win10-x64 --self-contained true -o bin\Release\net8.0\publish
+        run: dotnet publish ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-x64 -p:PublishSingleFile=true --no-build
 
       # Install Inno Setup
       - name: Install Inno Setup

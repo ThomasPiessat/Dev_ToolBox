@@ -4,6 +4,7 @@ AppVersion=1.0
 DefaultDirName={pf}\Dev ToolBox
 DefaultGroupName=Dev ToolBox
 OutputBaseFilename=Dev_ToolBox_Setup
+OutputDir=Dev_toolBox\Installer
 Compression=lzma
 SolidCompression=yes
 

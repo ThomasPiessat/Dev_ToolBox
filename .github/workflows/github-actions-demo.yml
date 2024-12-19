@@ -49,8 +49,8 @@ jobs:
       - name: Install Inno Setup
         run: |
           Invoke-WebRequest -Uri https://jrsoftware.org/download.php/is.exe -OutFile is.exe
-          Start-Process -Wait -FilePath is.exe /VERYSILENT /DIR="C:\InnoSetup"
-
+          Start-Process -Wait -FilePath .\is.exe -ArgumentList '/VERYSILENT', '/DIR="C:\InnoSetup"'
+          
       # Create the Installer
       - name: Create Installer
         run: |

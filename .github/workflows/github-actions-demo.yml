@@ -47,7 +47,7 @@ jobs:
       # Create Installer
       - name: Create Installer
         run: |
-          cmd.exe /c "C:\InnoSetup\ISCC.exe Dev_toolBox/setup.iss"
+          Start-Process -FilePath "C:\InnoSetup\ISCC.exe" -ArgumentList "Dev_toolBox/setup.iss" -Wait
         env:
           PATH: ${{ runner.temp }};C:\InnoSetup
 

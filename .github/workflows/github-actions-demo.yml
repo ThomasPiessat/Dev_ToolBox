@@ -53,7 +53,7 @@ jobs:
 
       - name: Version as date
         id: get_version
-        run: echo "::set-output name=version::$(Get-Date -Format 'yyyy.MM.dd')"
+        run: echo "{name}=version::$(Get-Date -Format 'yyyy.MM.dd')" >> $GITHUB_OUTPUT
 
       - name: Create GitHub Release
         id: create_release

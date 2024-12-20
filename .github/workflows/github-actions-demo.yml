@@ -51,11 +51,6 @@ jobs:
         env:
           PATH: ${{ runner.temp }};C:\InnoSetup
 
-      - name: Log Installer Directory
-        run: |
-          echo "Listing contents of bin/Release:"
-          dir bin/Release /s
-
       - name: Log Full Workspace Directory
         run: |
           echo "Listing full workspace directory:"

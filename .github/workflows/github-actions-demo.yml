@@ -72,7 +72,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.DEV_TOOL_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "bin/Release/net8.0-windows10.0.19041.0/publish/Dev_ToolBox_Setup.exe"
+          asset_path: "bin/Release/Installer/Dev_ToolBox_Setup.exe"
           asset_name: "Dev_ToolBox_Setup.exe"
           asset_content_type: application/vnd.microsoft.portable-executable
 

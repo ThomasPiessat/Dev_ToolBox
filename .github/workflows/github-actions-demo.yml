@@ -56,6 +56,11 @@ jobs:
           echo "Listing contents of bin/Release:"
           dir bin/Release /s
 
+      - name: Log Full Workspace Directory
+        run: |
+          echo "Listing full workspace directory:"
+          dir /s
+
       - name: Version as date
         id: get_version
         run: echo "{name}=version::$(Get-Date -Format 'yyyy.MM.dd')" >> $GITHUB_OUTPUT

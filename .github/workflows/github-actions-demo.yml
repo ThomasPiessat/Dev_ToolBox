@@ -38,6 +38,16 @@ jobs:
       - name: Publish
         run: dotnet publish ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-x64 -p:PublishSingleFile=true --no-build
 
+      - name: Verify build output
+        run: |
+          if (!(Test-Path ./bin/Release/net8.0/publish)) {
+            echo "Build output directory does not exist."
+            exit 1
+          } else {
+            echo "Build output directory exists."
+            Get-ChildItem -Path ./bin/Release/net8.0/publish -Recurse
+          }
+
       # Install Inno Setup
       - name: Install Inno Setup
         run: |
@@ -51,10 +61,20 @@ jobs:
         env:
           PATH: ${{ runner.temp }};C:\InnoSetup
 
+      - name: Verify installer output
+        run: |
+          if (!(Test-Path ./bin/Release/Installer)) {
+            echo "Installer directory does not exist."
+            exit 1
+          } else {
+            echo "Installer directory exists."
+            Get-ChildItem -Path ./bin/Release/Installer -Recurse
+          }
+
       - name: Log Full Workspace Directory
         run: |
-          echo "Listing full workspace directory:"
-          dir /s
+          echo "Listing full workspace directory from $(pwd):"
+          Get-ChildItem -Recurse
 
       - name: Version as date
         id: get_version

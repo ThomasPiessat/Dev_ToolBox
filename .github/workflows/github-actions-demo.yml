@@ -65,20 +65,8 @@ jobs:
         env:
           PATH: ${{ runner.temp }};C:\InnoSetup
 
-      - name: Verify installer output
-        run: |
-          if (!(Test-Path ./bin/Release/Installer)) {
-            echo "Installer directory does not exist."
-            exit 1
-          } else {
-            echo "Installer directory exists."
-            Get-ChildItem -Path ./bin/Release/Installer -Recurse
-          }
-
-      - name: Log Full Workspace Directory
-        run: |
-          echo "Listing full workspace directory from $(pwd):"
-          Get-ChildItem -Recurse
+      - name: List Installer Directory
+        run: dir D:\a\Dev_ToolBox\Dev_ToolBox\Dev_ToolBox\bin\Release\Installer
 
       - name: Version as date
         id: get_version
@@ -101,7 +89,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.DEV_TOOL_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "bin/Release/Installer/Dev_ToolBox_Setup.exe"
+          asset_path: D:\a\Dev_ToolBox\Dev_ToolBox\Dev_ToolBox\bin\Release\Installer\Dev_ToolBox_Setup.exe
           asset_name: "Dev_ToolBox_Setup.exe"
           asset_content_type: application/vnd.microsoft.portable-executable
 

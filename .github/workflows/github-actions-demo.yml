@@ -40,7 +40,7 @@ jobs:
 
       - name: Verify build output
         run: |
-          if (!(Test-Path ./bin/Release/net8.0-windows10.0.19041.0/publish)) {
+          if (!(Test-Path ./bin/Release/net8.0-windows10.0.19041.0/win-x64/publish)) {
             echo "Build output directory does not exist."
             exit 1
           } else {

@@ -38,14 +38,18 @@ jobs:
       - name: Publish
         run: dotnet publish ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-x64 -p:PublishSingleFile=true --no-build
 
+      - name: Log Current Working Directory
+        run: |
+          echo "Current working directory: $(pwd)"
+      
       - name: Verify build output
         run: |
-          if (!(Test-Path ./bin/Release/net8.0-windows10.0.19041.0/win-x64/publish)) {
+          if (!(Test-Path D:\a\Dev_ToolBox\Dev_ToolBox\Dev_ToolBox\bin\Release\net8.0-windows10.0.19041.0\win-x64\publish)) {
             echo "Build output directory does not exist."
             exit 1
           } else {
             echo "Build output directory exists."
-            Get-ChildItem -Path ./bin/Release/net8.0/publish -Recurse
+            Get-ChildItem -Path D:\a\Dev_ToolBox\Dev_ToolBox\Dev_ToolBox\bin\Release\net8.0-windows10.0.19041.0\win-x64\publish -Recurse
           }
 
       # Install Inno Setup

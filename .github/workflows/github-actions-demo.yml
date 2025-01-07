@@ -61,7 +61,13 @@ jobs:
       # Create Installer
       - name: Create Installer
         run: |
-         "C:\InnoSetup\ISCC.exe" "Dev_toolBox/setup.iss" /DOutputPath=D:\a\Dev_ToolBox\Dev_ToolBox\Dev_ToolBox\bin\Release\Installer
+          if (!(Test-Path D:\a\Dev_ToolBox\Dev_ToolBox\setup.iss)) {
+            echo "setup iss doesn't exist"
+            exit 1
+          } else {
+            echo "Setup iss exists."
+            "C:\InnoSetup\ISCC.exe" "Dev_toolBox/setup.iss" /DOutputPath=D:\a\Dev_ToolBox\Dev_ToolBox\Dev_ToolBox\bin\Release\Installer
+          }
         env:
           PATH: ${{ runner.temp }};C:\InnoSetup
 

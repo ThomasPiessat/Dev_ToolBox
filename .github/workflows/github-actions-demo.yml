@@ -58,6 +58,38 @@ jobs:
           Start-Process -FilePath "C:\InnoSetup\ISCC.exe" -ArgumentList '"Dev_toolBox/setup.iss" /DOutputPath="D:\a\Dev_ToolBox\Dev_ToolBox\Dev_ToolBox\bin\Release\Installer"' -NoNewWindow -Wait
         shell: pwsh
 
+      - name: Verify Inno Setup Installation
+        run: |
+          if (!(Test-Path "C:\InnoSetup\ISCC.exe")) {
+            echo "Inno Setup is NOT installed at C:\InnoSetup!"
+            exit 1
+          } else {
+            echo "Inno Setup found at C:\InnoSetup\ISCC.exe"
+          }
+        shell: pwsh
+
+      - name: Install Inno Setup
+        run: |
+          Invoke-WebRequest -Uri "https://jrsoftware.org/download.php/is.exe" -OutFile "C:\InnoSetup.exe"
+          Start-Process -FilePath "C:\InnoSetup.exe" -ArgumentList "/VERYSILENT /NORESTART /DIR=C:\InnoSetup" -NoNewWindow -Wait
+        shell: pwsh
+
+      - name: Install Inno Setup
+        run: |
+          Invoke-WebRequest -Uri "https://jrsoftware.org/download.php/is.exe" -OutFile "C:\InnoSetup.exe"
+          Start-Process -FilePath "C:\InnoSetup.exe" -ArgumentList "/VERYSILENT /NORESTART /DIR=C:\InnoSetup" -NoNewWindow -Wait
+        shell: pwsh
+
+      - name: Verify Installer Output
+        run: |
+          if (!(Test-Path "D:\a\Dev_ToolBox\Dev_ToolBox\bin\Release\Installer\Dev_ToolBox_Setup.exe")) {
+            echo "Installer file not found!"
+            exit 1
+          } else {
+            echo "Installer file found!"
+          }
+        shell: pwsh
+
       - name: Verify Installer Output
         run: |
           if (!(Test-Path "D:\a\Dev_ToolBox\Dev_ToolBox\Dev_ToolBox\bin\Release\Installer\Dev_ToolBox_Setup.exe")) {

@@ -53,10 +53,20 @@ jobs:
           }
 
       # Install Inno Setup
-      - name: Install Inno Setup
+      - name: Run Inno Setup
         run: |
-          Invoke-WebRequest -Uri https://jrsoftware.org/download.php/is.exe -OutFile is.exe
-          Start-Process -Wait -FilePath .\is.exe -ArgumentList '/VERYSILENT', '/DIR="C:\InnoSetup"'
+          Start-Process -FilePath "C:\InnoSetup\ISCC.exe" -ArgumentList '"Dev_toolBox/setup.iss" /DOutputPath="D:\a\Dev_ToolBox\Dev_ToolBox\Dev_ToolBox\bin\Release\Installer"' -NoNewWindow -Wait
+        shell: pwsh
+
+      - name: Verify Installer Output
+        run: |
+          if (!(Test-Path "D:\a\Dev_ToolBox\Dev_ToolBox\Dev_ToolBox\bin\Release\Installer\Dev_ToolBox_Setup.exe")) {
+          echo "Installer file not found!"
+          exit 1
+          } else {
+          echo "Installer file found!"
+          }
+        shell: pwsh
 
       # Create Installer
       - name: Create Installer

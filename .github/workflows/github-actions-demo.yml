@@ -87,8 +87,8 @@ jobs:
       - name: Upload Installer Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: DevToolBoxInstaller
-          path: output\DevToolBoxInstaller.exe
+          name: DevToolBoxsetup
+          path: output\DevToolBoxsetup.exe
           
       - name: Create GitHub Release
         id: create_release
@@ -107,8 +107,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.DEV_TOOL_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: output\DevToolBoxInstaller.exe
-          asset_name: "DevToolBoxInstaller.exe"
+          asset_path: output\DevToolBoxsetup.exe
+          asset_name: "DevToolBoxsetup.exe"
           #asset_content_type: application/vnd.microsoft.portable-executable
           asset_content_type: application/octet-stream
 

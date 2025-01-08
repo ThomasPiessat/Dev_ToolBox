@@ -39,8 +39,7 @@ jobs:
         run: dotnet publish ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-x64 -p:PublishSingleFile=true --no-build
 
       - name: Log Current Working Directory
-        run: |
-          echo "Current working directory: $(pwd)"
+        run: echo "Current working directory: $(pwd)"
       
       - name: Verify build output
         run: |
@@ -83,12 +82,16 @@ jobs:
       - name: Debug Output Directory
         run: dir output
         shell: cmd
-  
+
+      # 🔹 ZIP the installer before upload
+      - name: Zip the setup file
+        run: powershell Compress-Archive -Path output\DevToolBoxsetup.exe -DestinationPath output\DevToolBoxsetup.zip
+
       - name: Upload Installer Artifact
         uses: actions/upload-artifact@v3
         with:
           name: DevToolBoxsetup
-          path: output\DevToolBoxsetup.exe
+          path: output\DevToolBoxsetup.zip
           
       - name: Create GitHub Release
         id: create_release
@@ -101,11 +104,7 @@ jobs:
           draft: false
           prerelease: false
   
-      - name: Zip
-        run: Compress-Archive -Path ./Dev_ToolBox/output -DestinationPath ./DevToolBoxsetup.zip
-        shell: powershell
-
-      - name: Upload setup
+      - name: Upload setup.zip to GitHub Release
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.DEV_TOOL_TOKEN }}
@@ -113,31 +112,4 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: output\DevToolBoxsetup.zip
           asset_name: "DevToolBoxsetup.zip"
-          #asset_content_type: application/vnd.microsoft.portable-executable
-          asset_content_type: application/octet-stream
-
-      # - name: Zip
-      #   run: Compress-Archive -Path ./Dev_ToolBox/bin/Release -DestinationPath ./Dev_ToolBox.zip
-      #   shell: powershell
-
-      # - name: Version as date
-      #   id: get_version
-      #   run: echo "::set-output name=version::$(Get-Date -Format 'yyyy.MM.dd')"
-
-      # - name: Create Release
-      #   id: create_release
-      #   uses: actions/create-release@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.DEV_TOOL_TOKEN }}
-      #   with:
-      #     tag_name: ${{ steps.get_version.outputs.version }}
-      #     release_name: Release ${{ steps.get_version.outputs.version }}
-      #     draft: false
-      #     prerelease: false
-
-      # - name: Add asset
-      #   uses: AButler/upload-release-assets@v3.0
-      #   with:
-      #    files: ./Dev_ToolBox.zip
-      #    repo-token: ${{ secrets.DEV_TOOL_TOKEN }}
-      #    release-tag: ${{ steps.get_version.outputs.version }}
+          asset_content_type: application/zip

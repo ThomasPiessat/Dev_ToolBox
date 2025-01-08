@@ -39,7 +39,8 @@ jobs:
         run: dotnet publish ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-x64 -p:PublishSingleFile=true --no-build
 
       - name: Log Current Working Directory
-        run: echo "Current working directory: $(pwd)"
+        run: |
+          echo "Current working directory: $(pwd)"
       
       - name: Verify build output
         run: |
@@ -80,13 +81,14 @@ jobs:
         shell: cmd
   
       - name: Debug Output Directory
-        run: dir output
-        shell: cmd
-
-      # 🔹 ZIP the installer before upload
+        run: |
+          echo "Listing contents of the current directory:"
+          Get-ChildItem -Path . -Recurse
+      
       - name: Zip the setup file
-        run: powershell Compress-Archive -Path output\DevToolBoxsetup.exe -DestinationPath output\DevToolBoxsetup.zip
-
+        run: |
+          Compress-Archive -Path output/* -DestinationPath DevToolBoxsetup.zip
+      
       - name: Upload Installer Artifact
         uses: actions/upload-artifact@v3
         with:

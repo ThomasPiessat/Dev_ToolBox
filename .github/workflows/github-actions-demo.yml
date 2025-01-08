@@ -101,14 +101,18 @@ jobs:
           draft: false
           prerelease: false
   
+      - name: Zip
+        run: Compress-Archive -Path ./Dev_ToolBox/output -DestinationPath ./DevToolBoxsetup.zip
+        shell: powershell
+
       - name: Upload setup
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.DEV_TOOL_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: output\DevToolBoxsetup.exe
-          asset_name: "DevToolBoxsetup.exe"
+          asset_path: output\DevToolBoxsetup.zip
+          asset_name: "DevToolBoxsetup.zip"
           #asset_content_type: application/vnd.microsoft.portable-executable
           asset_content_type: application/octet-stream
 

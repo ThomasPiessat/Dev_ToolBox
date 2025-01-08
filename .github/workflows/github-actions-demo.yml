@@ -38,10 +38,6 @@ jobs:
       - name: Publish
         run: dotnet publish ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-x64 -p:PublishSingleFile=true --no-build
 
-      - name: Log Current Working Directory
-        run: |
-          echo "Current working directory: $(pwd)"
-      
       - name: Verify build output
         run: |
           if (!(Test-Path D:\a\Dev_ToolBox\Dev_ToolBox\Dev_ToolBox\bin\Release\net8.0-windows10.0.19041.0\win-x64\publish)) {
@@ -89,29 +85,3 @@ jobs:
         run: |
           Compress-Archive -Path output/* -DestinationPath DevToolBoxsetup.zip
       
-      - name: Upload Installer Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: DevToolBoxsetup
-          path: output\DevToolBoxsetup.zip
-          
-      - name: Create GitHub Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.DEV_TOOL_TOKEN }}
-        with:
-          tag_name: v${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}
-          release_name: DevTool Box Release v${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}
-          draft: false
-          prerelease: false
-  
-      - name: Upload setup.zip to GitHub Release
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.DEV_TOOL_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: output\DevToolBoxsetup.zip
-          asset_name: "DevToolBoxsetup.zip"
-          asset_content_type: application/zip

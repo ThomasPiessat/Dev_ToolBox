@@ -75,13 +75,34 @@ jobs:
         run: |
           "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" setup.iss
         shell: cmd
-  
-      - name: Debug Output Directory
-        run: |
-          echo "Listing contents of the current directory:"
-          Get-ChildItem -Path . -Recurse
       
       - name: Zip the setup file
         run: |
           Compress-Archive -Path output/* -DestinationPath DevToolBoxsetup.zip
       
+      - name: Upload Installer Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: DevToolBoxsetup
+          path: output\DevToolBoxsetup.zip
+          
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.DEV_TOOL_TOKEN }}
+        with:
+          tag_name: v
+          release_name: DevTool Box Release v
+          draft: false
+          prerelease: false
+  
+      - name: Upload setup.zip to GitHub Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.DEV_TOOL_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: output\DevToolBoxsetup.zip
+          asset_name: "DevToolBoxsetup.zip"
+          asset_content_type: application/zip

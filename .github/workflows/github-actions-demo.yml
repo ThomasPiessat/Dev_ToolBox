@@ -67,7 +67,7 @@ jobs:
           echo Compression=lzma2 >> setup.iss
           echo SolidCompression=yes >> setup.iss
           echo [Files] >> setup.iss
-          echo Source: "${{ env.BUILD_OUTPUT_PATH }}*"; DestDir: "{app}"; Flags: ignoreversion >> setup.iss
+          echo Source: "${{ env.BUILD_OUTPUT_PATH }}*"; DestDir: {app}; Flags: ignoreversion >> setup.iss
           echo [Icons] >> setup.iss
           echo Name: {group}\Dev ToolBox; Filename: {app}\DevToolBox.exe >> setup.iss
         shell: cmd

@@ -80,6 +80,16 @@ jobs:
         run: |
           Compress-Archive -Path output/* -DestinationPath DevToolBoxsetup.zip
       
+      - name: Verify zip output
+        run: |
+          if (!(Test-Path D:\a\Dev_ToolBox\Dev_ToolBox\output)) {
+            echo "Zip output directory does not exist."
+            exit 1
+          } else {
+            echo "Zip output directory exists."
+            Get-ChildItem -Path D:\a\Dev_ToolBox\Dev_ToolBox\output -Recurse
+          }
+
       - name: Upload Installer Artifact
         uses: actions/upload-artifact@v3
         with:

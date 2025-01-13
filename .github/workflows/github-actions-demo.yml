@@ -92,8 +92,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.DEV_TOOL_TOKEN }}
         with:
-          tag_name: v
-          release_name: DevTool Box Release v
+          tag_name: v1.0.${{ github.run_number }}
+          release_name: DevToolBox Release v1.0.${{ github.run_number }}
           draft: false
           prerelease: false
   

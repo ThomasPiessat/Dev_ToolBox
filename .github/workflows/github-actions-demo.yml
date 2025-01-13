@@ -9,6 +9,7 @@ on:
       
 env:
   PROJECT_PATH: Dev_ToolBox/Dev_ToolBox.csproj
+  BUILD_OUTPUT_PATH: Dev_ToolBox/Dev_ToolBox/bin/Release/net8.0-windows10.0.19041.0/win-x64/publish/
 
 jobs:
   deploy:
@@ -66,7 +67,7 @@ jobs:
           echo Compression=lzma2 >> setup.iss
           echo SolidCompression=yes >> setup.iss
           echo [Files] >> setup.iss
-          echo Source: *.*; DestDir: {app}; Flags: ignoreversion >> setup.iss
+          echo Source: "${{ env.BUILD_OUTPUT_PATH }}*"; DestDir: "{app}"; Flags: ignoreversion >> setup.iss
           echo [Icons] >> setup.iss
           echo Name: {group}\Dev ToolBox; Filename: {app}\DevToolBox.exe >> setup.iss
         shell: cmd
@@ -107,8 +108,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.DEV_TOOL_TOKEN }}
         with:
-          tag_name: v${{ github.ref_name }}
-          release_name: DevToolBox Release ${{ github.ref_name }}
+          tag_name: v1.0.${{ github.run_number }}
+          release_name: DevToolBox Release v1.0.${{ github.run_number }}
           draft: false
           prerelease: false
   

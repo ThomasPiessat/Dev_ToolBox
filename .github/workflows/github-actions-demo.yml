@@ -69,7 +69,7 @@ jobs:
           echo [Files] >> setup.iss
           echo Source: "Dev_ToolBox\bin\Release\net8.0-windows10.0.19041.0\win-x64\*"; DestDir: {app}; Flags: ignoreversion >> setup.iss
           echo [Icons] >> setup.iss
-          echo Name: {group}\Dev ToolBox; Filename: {app}\DevToolBox.exe >> setup.iss
+          echo Name: {group}\Dev ToolBox; Filename: {app}\Dev_ToolBox.exe >> setup.iss
         shell: cmd
 
       - name: Compile Inno Setup Script

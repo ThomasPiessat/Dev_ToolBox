@@ -118,6 +118,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.DEV_TOOL_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: DevToolBoxsetup.zip
-          asset_name: "DevToolBoxsetup.zip"
-          asset_content_type: application/zip
+          asset_path: |
+            output\DevToolBoxsetup.zip
+            README.md
+          asset_name: |
+            DevToolBoxsetup.zip
+            README.md
+          asset_content_type: |
+            application/zip
+            text/markdown

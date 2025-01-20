@@ -15,6 +15,7 @@ using Dev_ToolBox.Pages.StringConverter;
 using Dev_ToolBox.Pages.SortDedupeLine;
 using Dev_ToolBox.Pages.TimeConverter;
 using Dev_ToolBox.Pages.URLParser;
+using Dev_ToolBox.Pages.ColorConverter;
 
 namespace Dev_ToolBox
 {
@@ -59,6 +60,9 @@ namespace Dev_ToolBox
                         break;                    
                     case "Time Converter":
                         mainFrame.Navigate(new TimeConverterPage());
+                        break;
+                    case "Color Converter":
+                        mainFrame.Navigate(new ColorConverterPage());
                         break;
                     case "Regex Checker":
                         mainFrame.Navigate(new RegexCheckerPage());

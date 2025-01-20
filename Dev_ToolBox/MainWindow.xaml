@@ -22,6 +22,7 @@
             <ListBoxItem Content="String Converter"/>
             <ListBoxItem Content="Sort Dedupe Line"/>
             <ListBoxItem Content="Time Converter"/>
+            <ListBoxItem Content="Color Converter"/>
             <ListBoxItem Content="Regex Checker"/>
             <ListBoxItem Content="URL Parser"/>
             <!-- Add more tools here -->

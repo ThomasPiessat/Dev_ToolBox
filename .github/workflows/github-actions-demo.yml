@@ -120,10 +120,7 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: |
             DevToolBoxsetup.zip
-            README.md
           asset_name: |
             "DevToolBoxsetup.zip"
-            README.md
           asset_content_type: |
             application/zip
-            text/markdown

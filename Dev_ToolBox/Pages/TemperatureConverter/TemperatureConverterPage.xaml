@@ -20,7 +20,7 @@
                     <ComboBoxItem Content="Fahrenheit"/>
                     <ComboBoxItem Content="Kelvin"/>
                 </ComboBox>
-                <TextBlock Text=" to " VerticalAlignment="Center" Margin="0,0,10,0" />
+                <TextBlock Text="to" VerticalAlignment="Center" Margin="10,0,10,0" />
                 <TextBox x:Name="txtOutputTemperature" Width="100" Margin="0,0,10,0" Text="0" FontWeight="Bold" />
                 <ComboBox x:Name="targetUnitDropdown" Width="100" VerticalContentAlignment="Center">
                     <ComboBoxItem Content="Celsius"/>

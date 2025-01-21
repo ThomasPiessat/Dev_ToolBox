@@ -33,9 +33,21 @@
     <Compile Update="Pages\StringConverter\StringConverterPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\SpeedConverter\SpeedConverterPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\TemperatureConverter\TemperatureConverterPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\URLParser\URLParserPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Pages\TemperatureConverter\TemperatureConverterPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 
 </Project>

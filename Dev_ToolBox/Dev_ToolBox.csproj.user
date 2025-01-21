@@ -45,6 +45,9 @@
     <Page Update="Pages\StringConverter\StringConverterPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\SpeedConverter\SpeedConverterPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\TimeConverter\TimeConverterPage.xaml">
       <SubType>Designer</SubType>
     </Page>

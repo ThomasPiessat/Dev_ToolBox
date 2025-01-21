@@ -14,18 +14,26 @@
 
         <!-- Side Bar with Tools -->
         <ListBox Background="#2c3e50" x:Name="lstTools" SelectionChanged="ToolSelectionChanged">
-            <ListBoxItem Content="Calculator"/>
+            <ListBoxItem Content="Calculator" Focusable="False" IsEnabled="False" IsHitTestVisible="False" FontSize="14"/>
+            <ListBoxItem Content="Simple"/>
             <ListBoxItem Content="Compound Interest Calculator"/>
             <ListBoxItem Content="Percentage Calculator"/>
-            <ListBoxItem Content="Diff Viewer"/>
-            <ListBoxItem Content="QR Code Generator"/>
+
+            <!-- Converter area -->
+            <ListBoxItem Content="Converter" Focusable="False" IsEnabled="False" IsHitTestVisible="False" FontSize="14"/>
             <ListBoxItem Content="String Converter"/>
-            <ListBoxItem Content="Sort Dedupe Line"/>
             <ListBoxItem Content="Time Converter"/>
+            <ListBoxItem Content="Temperature Converter"/>
+            <ListBoxItem Content="Speed Converter"/>
             <ListBoxItem Content="Color Converter"/>
+            
+            <!-- Miscellaneous area -->
+            <ListBoxItem Content="Miscellaneous" Focusable="False" IsEnabled="False" IsHitTestVisible="False" FontSize="14"/>
+            <ListBoxItem Content="Diff Viewer"/>
             <ListBoxItem Content="Regex Checker"/>
             <ListBoxItem Content="URL Parser"/>
-            <!-- Add more tools here -->
+            <ListBoxItem Content="Sort Dedupe Line"/>
+            <ListBoxItem Content="QR Code Generator"/>
         </ListBox>
 
         <!-- Main Content Area with Frame for Tool Pages -->

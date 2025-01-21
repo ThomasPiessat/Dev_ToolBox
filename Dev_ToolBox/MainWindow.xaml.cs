@@ -16,6 +16,8 @@ using Dev_ToolBox.Pages.SortDedupeLine;
 using Dev_ToolBox.Pages.TimeConverter;
 using Dev_ToolBox.Pages.URLParser;
 using Dev_ToolBox.Pages.ColorConverter;
+using Dev_ToolBox.Pages.TemperatureConverter;
+using Dev_ToolBox.Pages.SpeedConverter;
 
 namespace Dev_ToolBox
 {
@@ -37,7 +39,7 @@ namespace Dev_ToolBox
             {
                 switch (selectedTool.Content.ToString())
                 {
-                    case "Calculator":
+                    case "Simple":
                         mainFrame.Navigate(new CalculatorPage());
                         break;
                     case "Compound Interest Calculator":
@@ -60,6 +62,12 @@ namespace Dev_ToolBox
                         break;                    
                     case "Time Converter":
                         mainFrame.Navigate(new TimeConverterPage());
+                        break;
+                    case "Temperature Converter":
+                        mainFrame.Navigate(new TemperatureConverterPage());
+                        break;
+                    case "Speed Converter":
+                        mainFrame.Navigate(new SpeedConverterPage());
                         break;
                     case "Color Converter":
                         mainFrame.Navigate(new ColorConverterPage());

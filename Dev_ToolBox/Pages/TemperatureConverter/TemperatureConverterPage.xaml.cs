@@ -37,17 +37,17 @@ namespace Dev_ToolBox.Pages.TemperatureConverter
 
 
             if (sourceUnit == "Celsius" && targetUnit == "Fahrenheit")
-                txtOutputTemperature.Text = CelsiusToFahrenheit(inputTemperature).ToString();
+                txtOutputTemperature.Text = $"{CelsiusToFahrenheit(inputTemperature).ToString():F2}";
             else if (sourceUnit == "Celsius" && targetUnit == "Kelvin")
-                txtOutputTemperature.Text = CelsiusToKelvin(inputTemperature).ToString();
+                txtOutputTemperature.Text = $"{CelsiusToKelvin(inputTemperature).ToString():F2}";
             else if (sourceUnit == "Fahrenheit" && targetUnit == "Celsius")
-                txtOutputTemperature.Text = FahrenheitToCelsius(inputTemperature).ToString();
+                txtOutputTemperature.Text = $"{FahrenheitToCelsius(inputTemperature).ToString():F2}";
             else if (sourceUnit == "Fahrenheit" && targetUnit == "Kelvin")
-                txtOutputTemperature.Text = FahrenheitToKelvin(inputTemperature).ToString();
+                txtOutputTemperature.Text = $"{FahrenheitToKelvin(inputTemperature).ToString():F2}";
             else if (sourceUnit == "Kelvin" && targetUnit == "Celsius")
-                txtOutputTemperature.Text = KelvinToCelsius(inputTemperature).ToString();
+                txtOutputTemperature.Text = $"{KelvinToCelsius(inputTemperature).ToString():F2}";
             else if (sourceUnit == "Kelvin" && targetUnit == "Fahrenheit")
-                txtOutputTemperature.Text = KelvinToFahrenheit(inputTemperature).ToString();
+                txtOutputTemperature.Text = $"{KelvinToFahrenheit(inputTemperature).ToString():F2}";
             else if (sourceUnit == targetUnit)
                 txtOutputTemperature.Text = inputTemperature.ToString();           
         }

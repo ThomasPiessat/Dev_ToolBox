@@ -18,6 +18,7 @@ using Dev_ToolBox.Pages.URLParser;
 using Dev_ToolBox.Pages.ColorConverter;
 using Dev_ToolBox.Pages.TemperatureConverter;
 using Dev_ToolBox.Pages.SpeedConverter;
+using Dev_ToolBox.Pages.JsonFormatterValidator;
 
 namespace Dev_ToolBox
 {
@@ -74,6 +75,9 @@ namespace Dev_ToolBox
                         break;
                     case "Regex Checker":
                         mainFrame.Navigate(new RegexCheckerPage());
+                        break;
+                    case "JSON Formatter Validator":
+                        mainFrame.Navigate(new JsonFormatterValidatorPage());
                         break;
                     case "URL Parser":
                         mainFrame.Navigate(new URLParserPage());

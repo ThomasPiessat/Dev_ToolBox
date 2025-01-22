@@ -1,0 +1,45 @@
+﻿<Page x:Class="Dev_ToolBox.Pages.JsonFormatterValidator.JsonFormatterValidatorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Dev_ToolBox.Pages.JsonFormatterValidator"
+      xmlns:local1="clr-namespace:Dev_ToolBox.Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="JsonFormatterValidatorPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <local1:TitleControl ToolName="Json Formatter Validator" 
+                        HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="10" />
+                <!-- Spacer -->
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox Grid.Column="0" Name="JsonInputBox" 
+                     AcceptsReturn="True" TextWrapping="Wrap"
+                     VerticalScrollBarVisibility="Auto"/>
+
+            <TextBox Grid.Column="2" Name="JsonOutputBox" 
+                     IsReadOnly="True" AcceptsReturn="True"
+                     TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+        </Grid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" 
+                    HorizontalAlignment="Center" Margin="0,10,0,0">
+            <Button Content="Validate" Width="100" Margin="5" Click="ValidateJsonButton_Click" />
+            <Button Content="Format" Width="100" Margin="5" Click="FormatJsonButton_Click" />
+            <Button Content="Minify" Width="100" Margin="5" Click="MinifyJsonButton_Click" />
+        </StackPanel>
+    </Grid>
+</Page>

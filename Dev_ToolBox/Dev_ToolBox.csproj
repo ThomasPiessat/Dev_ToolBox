@@ -27,6 +27,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Pages\JsonFormatterValidator\JsonFormatterValidatorPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\RegexChecker\RegexCheckerPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -45,6 +48,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Pages\JsonFormatterValidator\JsonFormatterValidatorPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\TemperatureConverter\TemperatureConverterPage.xaml">
       <SubType>Designer</SubType>
     </Page>

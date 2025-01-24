@@ -45,6 +45,9 @@
     <Compile Update="Pages\DuplicateFileFinder\DuplicateFileFinderPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\PasswordGenerator\PasswordGeneratorPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\URLParser\URLParserPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -26,6 +26,7 @@
                 <!-- Miscellaneous area -->
                 <ListBoxItem Content="Miscellaneous" Focusable="False" IsEnabled="False" IsHitTestVisible="False" FontSize="14"/>
                 <ListBoxItem Content="Diff Viewer"/>
+                <ListBoxItem Content="Password Generator"/>
                 <ListBoxItem Content="Regex Checker"/>
                 <ListBoxItem Content="JSON Formatter Validator"/>
                 <ListBoxItem Content="URL Parser"/>

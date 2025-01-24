@@ -20,6 +20,7 @@ using Dev_ToolBox.Pages.TemperatureConverter;
 using Dev_ToolBox.Pages.SpeedConverter;
 using Dev_ToolBox.Pages.JsonFormatterValidator;
 using Dev_ToolBox.Pages.DuplicateFileFinder;
+using Dev_ToolBox.Pages.PasswordGenerator;
 
 namespace Dev_ToolBox
 {
@@ -85,6 +86,9 @@ namespace Dev_ToolBox
                         break;                    
                     case "Duplicate file finder":
                         mainFrame.Navigate(new DuplicateFileFinderPage());
+                        break;                    
+                    case "Password Generator":
+                        mainFrame.Navigate(new PasswordGeneratorPage());
                         break;
                         // Add cases for other tools as needed
                 }

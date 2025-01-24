@@ -51,6 +51,9 @@
     <Page Update="Pages\TimeConverter\TimeConverterPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\DuplicateFileFinder\DuplicateFileFinderPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\URLParser\URLParserPage.xaml">
       <SubType>Designer</SubType>
     </Page>

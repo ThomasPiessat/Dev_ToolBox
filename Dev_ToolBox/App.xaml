@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:Dev_ToolBox"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <!-- DarkMode -->
+        <SolidColorBrush x:Key="WindowBackground" Color="#FFFFFF"/>
+        <SolidColorBrush x:Key="TextColor" Color="#000000"/>
+        
         <!-- Styled TextBox -->
         <Style TargetType="TextBox">
             <Setter Property="FontSize" Value="12"/>

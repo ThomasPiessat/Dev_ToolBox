@@ -19,6 +19,7 @@ using Dev_ToolBox.Pages.ColorConverter;
 using Dev_ToolBox.Pages.TemperatureConverter;
 using Dev_ToolBox.Pages.SpeedConverter;
 using Dev_ToolBox.Pages.JsonFormatterValidator;
+using Dev_ToolBox.Pages.DuplicateFileFinder;
 
 namespace Dev_ToolBox
 {
@@ -81,10 +82,18 @@ namespace Dev_ToolBox
                         break;
                     case "URL Parser":
                         mainFrame.Navigate(new URLParserPage());
+                        break;                    
+                    case "Duplicate file finder":
+                        mainFrame.Navigate(new DuplicateFileFinderPage());
                         break;
                         // Add cases for other tools as needed
                 }
             }
+        }
+
+        private void OpenSettings_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

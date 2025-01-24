@@ -6,38 +6,55 @@
         xmlns:local="clr-namespace:Dev_ToolBox"
         mc:Ignorable="d"
         Title="Dev ToolBox" Height="600" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
+    <DockPanel>
         <!-- Side Bar with Tools -->
-        <ListBox Background="#2c3e50" x:Name="lstTools" SelectionChanged="ToolSelectionChanged">
-            <ListBoxItem Content="Calculator" Focusable="False" IsEnabled="False" IsHitTestVisible="False" FontSize="14"/>
-            <ListBoxItem Content="Simple"/>
-            <ListBoxItem Content="Compound Interest Calculator"/>
-            <ListBoxItem Content="Percentage Calculator"/>
+        <Grid DockPanel.Dock="Left">
+            <ListBox Background="#2c3e50" x:Name="lstTools" SelectionChanged="ToolSelectionChanged">
+                <ListBoxItem Content="Calculator" Focusable="False" IsEnabled="False" IsHitTestVisible="False" FontSize="14"/>
+                <ListBoxItem Content="Simple"/>
+                <ListBoxItem Content="Compound Interest Calculator"/>
+                <ListBoxItem Content="Percentage Calculator"/>
 
-            <!-- Converter area -->
-            <ListBoxItem Content="Converter" Focusable="False" IsEnabled="False" IsHitTestVisible="False" FontSize="14"/>
-            <ListBoxItem Content="String Converter"/>
-            <ListBoxItem Content="Time Converter"/>
-            <ListBoxItem Content="Temperature Converter"/>
-            <ListBoxItem Content="Speed Converter"/>
-            <ListBoxItem Content="Color Converter"/>
-            
-            <!-- Miscellaneous area -->
-            <ListBoxItem Content="Miscellaneous" Focusable="False" IsEnabled="False" IsHitTestVisible="False" FontSize="14"/>
-            <ListBoxItem Content="Diff Viewer"/>
-            <ListBoxItem Content="Regex Checker"/>
-            <ListBoxItem Content="JSON Formatter Validator"/>
-            <ListBoxItem Content="URL Parser"/>
-            <ListBoxItem Content="Sort Dedupe Line"/>
-            <ListBoxItem Content="QR Code Generator"/>
-        </ListBox>
+                <!-- Converter area -->
+                <ListBoxItem Content="Converter" Focusable="False" IsEnabled="False" IsHitTestVisible="False" FontSize="14"/>
+                <ListBoxItem Content="String Converter"/>
+                <ListBoxItem Content="Time Converter"/>
+                <ListBoxItem Content="Temperature Converter"/>
+                <ListBoxItem Content="Speed Converter"/>
+                <ListBoxItem Content="Color Converter"/>
 
-        <!-- Main Content Area with Frame for Tool Pages -->
-        <Frame x:Name="mainFrame" Grid.Column="1"/>
-    </Grid>
+                <!-- Miscellaneous area -->
+                <ListBoxItem Content="Miscellaneous" Focusable="False" IsEnabled="False" IsHitTestVisible="False" FontSize="14"/>
+                <ListBoxItem Content="Diff Viewer"/>
+                <ListBoxItem Content="Regex Checker"/>
+                <ListBoxItem Content="JSON Formatter Validator"/>
+                <ListBoxItem Content="URL Parser"/>
+                <ListBoxItem Content="Sort Dedupe Line"/>
+                <ListBoxItem Content="Duplicate file finder"/>
+                <ListBoxItem Content="QR Code Generator"/>
+            </ListBox>
+            <!-- Settings Button -->
+            <Button Content="⚙️" VerticalAlignment="Bottom" Height="40" Background="#34495e" Foreground="White"
+                BorderBrush="Transparent" FontSize="16" Click="OpenSettings_Click"/>
+        </Grid>
+
+        <!--<Grid>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400">
+                <TextBlock FontSize="24" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,10">
+                Welcome to the ToolBox!
+                </TextBlock>
+                <TextBlock FontSize="16" TextWrapping="Wrap" TextAlignment="Center">
+                Explore our wide range of tools to simplify your tasks, including calculators, converters, and utility features.
+                </TextBlock>
+                <TextBlock FontSize="14" TextWrapping="Wrap" TextAlignment="Center" Margin="0,20,0,0" Foreground="Gray">
+                Use the sidebar to navigate through the tools. Happy working!
+                </TextBlock>
+            </StackPanel>
+        </Grid>-->
+
+        <!-- Main Content Area -->
+        <Grid>
+            <Frame x:Name="mainFrame" />
+        </Grid>
+    </DockPanel>
 </Window>

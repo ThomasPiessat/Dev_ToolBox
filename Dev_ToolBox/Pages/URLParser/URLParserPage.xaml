@@ -9,7 +9,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="URLParserPage">
     <Grid>
-        <local1:TitleControl ToolName="Time Converter" 
+        <local1:TitleControl ToolName="URL Parser" 
                         HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
         <!-- Content -->
         <StackPanel Margin="10,60,10,10">

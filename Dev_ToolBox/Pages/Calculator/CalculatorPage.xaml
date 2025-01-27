@@ -9,30 +9,61 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CalculatorPage">
     <Grid>
-        <local1:TitleControl ToolName="Calculator" 
-                        HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
-        <!-- Content -->        
-        <Grid Margin="20" Height="240">
-            <TextBox x:Name="txtDisplay" TextAlignment="Right" FontSize="24" IsReadOnly="True" Margin="0,10,0,160"/>
-            <TextBox x:Name="calcDisplay" HorizontalAlignment="Right" TextAlignment="Right" Margin="0,-10,0,0" TextWrapping="Wrap" IsReadOnly="True" VerticalAlignment="Top" Width="120"/>
-            <UniformGrid Rows="4" Columns="4" Margin="0,60,0,0">
-                <Button Content="7" Click="NumberButton_Click"/>
-                <Button Content="8" Click="NumberButton_Click"/>
-                <Button Content="9" Click="NumberButton_Click"/>
-                <Button Content="/" Click="OperatorButton_Click"/>
-                <Button Content="4" Click="NumberButton_Click"/>
-                <Button Content="5" Click="NumberButton_Click"/>
-                <Button Content="6" Click="NumberButton_Click"/>
-                <Button Content="*" Click="OperatorButton_Click"/>
-                <Button Content="1" Click="NumberButton_Click"/>
-                <Button Content="2" Click="NumberButton_Click"/>
-                <Button Content="3" Click="NumberButton_Click"/>
-                <Button Content="-" Click="OperatorButton_Click"/>
-                <Button Content="C" Click="ClearButton_Click"/>
-                <Button Content="0" Click="NumberButton_Click"/>
-                <Button Content="=" Click="EqualButton_Click"/>
-                <Button Content="+" Click="OperatorButton_Click"/>
-            </UniformGrid>
-        </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="200"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <local1:TitleControl Grid.Row="0" ToolName="Calculator" VerticalAlignment="Top" Height="50"/>
+
+        <!-- Calculation History Section -->
+        <TextBlock x:Name="CalculatorHistory"
+            FontSize="20"
+            TextAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="0,60,10,0"
+            Padding="10" Height="50"/>
+
+        <!-- Display Section -->
+        <TextBox x:Name="CalculatorDisplay"
+                 FontSize="24"
+                 TextAlignment="Right"
+                 VerticalAlignment="Top"
+                 Margin="0,116,10,0"
+                 IsReadOnly="True"
+                 Padding="10" Height="74"/>
+
+        <!-- Buttons Section -->
+        <UniformGrid Grid.Row="1" Rows="5" Columns="4">
+            <!-- First Row -->
+            <Button Content="C" Click="Clear_Click" Style="{StaticResource CalculatorButtonStyle}" />
+            <Button Content="⌫" Click="Backspace_Click" Style="{StaticResource CalculatorButtonStyle}" />
+            <Button Content="%" Click="Operator_Click" Style="{StaticResource CalculatorButtonStyle}" />
+            <Button Content="÷" Click="Operator_Click" Style="{StaticResource CalculatorButtonStyle}" />
+
+            <!-- Second Row -->
+            <Button Content="7" Click="Number_Click" Style="{StaticResource CalculatorButtonStyle}" />
+            <Button Content="8" Click="Number_Click" Style="{StaticResource CalculatorButtonStyle}" />
+            <Button Content="9" Click="Number_Click" Style="{StaticResource CalculatorButtonStyle}" />
+            <Button Content="×" Click="Operator_Click" Style="{StaticResource CalculatorButtonStyle}" />
+
+            <!-- Third Row -->
+            <Button Content="4" Click="Number_Click" Style="{StaticResource CalculatorButtonStyle}" />
+            <Button Content="5" Click="Number_Click" Style="{StaticResource CalculatorButtonStyle}" />
+            <Button Content="6" Click="Number_Click" Style="{StaticResource CalculatorButtonStyle}" />
+            <Button Content="−" Click="Operator_Click" Style="{StaticResource CalculatorButtonStyle}" />
+
+            <!-- Fourth Row -->
+            <Button Content="1" Click="Number_Click" Style="{StaticResource CalculatorButtonStyle}" />
+            <Button Content="2" Click="Number_Click" Style="{StaticResource CalculatorButtonStyle}" />
+            <Button Content="3" Click="Number_Click" Style="{StaticResource CalculatorButtonStyle}" />
+            <Button Content="+" Click="Operator_Click" Style="{StaticResource CalculatorButtonStyle}" />
+
+            <!-- Fifth Row -->
+            <Button Content="±" Click="ToggleSign_Click" Style="{StaticResource CalculatorButtonStyle}" />
+            <Button Content="0" Click="Number_Click" Style="{StaticResource CalculatorButtonStyle}" />
+            <Button Content="." Click="Number_Click" Style="{StaticResource CalculatorButtonStyle}" />
+            <Button Content="=" Click="Equals_Click" Style="{StaticResource CalculatorButtonStyle}" Background="#1abc9c" Foreground="White" />
+        </UniformGrid>
     </Grid>
 </Page>

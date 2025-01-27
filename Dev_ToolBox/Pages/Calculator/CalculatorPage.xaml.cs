@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,89 +22,71 @@ namespace Dev_ToolBox.Pages.Calculator
     /// </summary>
     public partial class CalculatorPage : Page
     {
-        private string currentInput = "";
-        private double currentValue = 0;
-        private string lastOperator = "";
-        private bool isOperatorClicked = false;
+        private string currentOperator = string.Empty;
+        private string calculationHistory = string.Empty;
 
         public CalculatorPage()
         {
             InitializeComponent();
         }
 
-        private void NumberButton_Click(object sender, RoutedEventArgs e)
+        private void Number_Click(object sender, RoutedEventArgs e)
         {
-            string digit = (sender as Button).Content.ToString();
-            currentInput += digit;
-            txtDisplay.Text = currentInput;
-            calcDisplay.Text = currentInput;
-        }
-
-        private void OperatorButton_Click(object sender, RoutedEventArgs e)
-        {
-            string operatorSymbol = (sender as Button).Content.ToString();
-            if (!isOperatorClicked)
+            Button button = sender as Button;
+            if (button != null)
             {
-                currentValue = double.Parse(currentInput);
-                currentInput = "";
-                lastOperator = operatorSymbol;
-                isOperatorClicked = true;
-                txtDisplay.Text = operatorSymbol;
-                calcDisplay.Text += operatorSymbol;
-            }
-            else
-            {
-                Calculate();
-                lastOperator = operatorSymbol;
+                CalculatorDisplay.Text += button.Content.ToString();
             }
         }
 
-        private void EqualButton_Click(object sender, RoutedEventArgs e)
+        private void Operator_Click(object sender, RoutedEventArgs e)
         {
-            Calculate();
-            lastOperator = "";
-            isOperatorClicked = false;
-        }
-
-        private void ClearButton_Click(object sender, RoutedEventArgs e)
-        {
-            currentInput = "";
-            currentValue = 0;
-            lastOperator = "";
-            isOperatorClicked = false;
-            txtDisplay.Text = "";
-            calcDisplay.Text = "";
-        }
-
-        private void Calculate()
-        {
-            double input = double.Parse(currentInput);
-            switch (lastOperator)
+            Button button = sender as Button;
+            if (button != null)
             {
-                case "+":
-                    currentValue += input;
-                    break;
-                case "-":
-                    currentValue -= input;
-                    break;
-                case "*":
-                    currentValue *= input;
-                    break;
-                case "/":
-                    if (input != 0)
-                    {
-                        currentValue /= input;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Cannot divide by zero.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                        ClearButton_Click(null, null);
-                        return;
-                    }
-                    break;
+                currentOperator = button.Content.ToString();
+                calculationHistory += $"{CalculatorDisplay.Text} {currentOperator} ";
+                CalculatorHistory.Text = calculationHistory;
+                CalculatorDisplay.Clear();
             }
-            txtDisplay.Text = currentValue.ToString();
-            calcDisplay.Text = currentValue.ToString();
+        }
+
+        private void Equals_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string result = new DataTable().Compute($"{calculationHistory} {CalculatorDisplay.Text}", null).ToString();
+                CalculatorDisplay.Text = result;
+                calculationHistory = string.Empty;
+                CalculatorHistory.Text = string.Empty;
+            }
+            catch
+            {
+                CalculatorDisplay.Text = "Error";
+            }
+        }
+
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            CalculatorDisplay.Clear();
+            calculationHistory = string.Empty;
+            CalculatorHistory.Text = string.Empty;
+        }
+
+        private void Backspace_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(CalculatorDisplay.Text))
+            {
+                CalculatorDisplay.Text = CalculatorDisplay.Text.Substring(0, CalculatorDisplay.Text.Length - 1);
+            }
+        }
+
+        private void ToggleSign_Click(object sender, RoutedEventArgs e)
+        {
+            if (double.TryParse(CalculatorDisplay.Text, out double value))
+            {
+                CalculatorDisplay.Text = (-value).ToString();
+            }
         }
     }
 }

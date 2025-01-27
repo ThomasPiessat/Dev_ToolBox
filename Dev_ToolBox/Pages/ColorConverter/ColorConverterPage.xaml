@@ -30,6 +30,7 @@
                 <TextBox Name="HexInput" />
 
                 <Button Name="ConvertColorButton" Content="Convert" Width="100" HorizontalAlignment="Left" Click="ConvertColorButton_Click" />
+                <TextBlock x:Name="ErrorInput" />
             </StackPanel>
 
             <!-- Output and Preview Section -->

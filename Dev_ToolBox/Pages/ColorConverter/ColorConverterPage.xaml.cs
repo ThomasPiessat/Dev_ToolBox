@@ -27,81 +27,103 @@ namespace Dev_ToolBox.Pages.ColorConverter
 
         private void ConvertColorButton_Click(object sender, RoutedEventArgs e)
         {
-            // Clear the output preview and result message
-            ColorPreview.Background = null;
-
-            // Determine which input is provided and process accordingly
-            if (!string.IsNullOrWhiteSpace(RgbInput.Text))
+            try
             {
-                // Convert from RGB
-                string[] rgbParts = RgbInput.Text.Split(',');
-                if (rgbParts.Length != 3 || !IsValidRGB(rgbParts))
-                    throw new ArgumentException("Invalid RGB format. Use 'R,G,B' format.");
+                // Clear any previous error message
+                ErrorInput.Text = string.Empty;
+                ErrorInput.Visibility = Visibility.Collapsed;
 
-                byte r = byte.Parse(rgbParts[0]);
-                byte g = byte.Parse(rgbParts[1]);
-                byte b = byte.Parse(rgbParts[2]);
+                // Clear the output preview and result message
+                ColorPreview.Background = null;
 
-                // Convert to RGBA
-                string rgba = $"{r}, {g}, {b}, {(byte)255}";
-                RgbaInput.Text = rgba;
+                // Determine which input is provided and process accordingly
+                if (!string.IsNullOrWhiteSpace(RgbInput.Text))
+                {
+                    // Convert from RGB
+                    string[] rgbParts = RgbInput.Text.Split(',');
+                    if (rgbParts.Length != 3 || !IsValidRGB(rgbParts))
+                        throw new ArgumentException("Invalid RGB format. Use 'R,G,B' format.");
 
-                // Convert to HEX
-                string hex = $"#{r:X2}{g:X2}{b:X2}";
-                HexInput.Text = hex;
+                    byte r = byte.Parse(rgbParts[0]);
+                    byte g = byte.Parse(rgbParts[1]);
+                    byte b = byte.Parse(rgbParts[2]);
 
-                // Update the preview
-                ColorPreview.Background = new SolidColorBrush(Color.FromRgb(r, g, b));
+                    // Convert to RGBA
+                    string rgba = $"{r}, {g}, {b}, {(byte)255}";
+                    RgbaInput.Text = rgba;
+
+                    // Convert to HEX
+                    string hex = $"#{r:X2}{g:X2}{b:X2}";
+                    HexInput.Text = hex;
+
+                    // Update the preview
+                    ColorPreview.Background = new SolidColorBrush(Color.FromRgb(r, g, b));
+                }
+                else if (!string.IsNullOrWhiteSpace(RgbaInput.Text))
+                {
+                    // Convert from RGBA
+                    string[] rgbaParts = RgbaInput.Text.Split(',');
+                    if (rgbaParts.Length != 4 || !IsValidRGBA(rgbaParts))
+                        throw new ArgumentException("Invalid RGBA format. Use 'R,G,B,A' format.");
+
+                    byte r = byte.Parse(rgbaParts[0]);
+                    byte g = byte.Parse(rgbaParts[1]);
+                    byte b = byte.Parse(rgbaParts[2]);
+                    byte a = byte.Parse(rgbaParts[3]);
+
+                    // Convert to RGB
+                    string rgb = $"{r}, {g}, {b}";
+                    RgbInput.Text = rgb;
+
+                    // Convert to HEX
+                    string hex = $"#{r:X2}{g:X2}{b:X2}";
+                    HexInput.Text = hex;
+
+                    // Update the preview
+                    ColorPreview.Background = new SolidColorBrush(Color.FromArgb(a, r, g, b));
+                }
+                else if (!string.IsNullOrWhiteSpace(HexInput.Text))
+                {
+                    // Convert from HEX
+                    string hex = HexInput.Text.Trim('#');
+                    if (!IsValidHex(hex))
+                        throw new ArgumentException("Invalid HEX format. Use '#RRGGBB' or '#RRGGBBAA' format.");
+
+                    byte r = Convert.ToByte(hex.Substring(0, 2), 16);
+                    byte g = Convert.ToByte(hex.Substring(2, 2), 16);
+                    byte b = Convert.ToByte(hex.Substring(4, 2), 16);
+                    byte a = hex.Length == 8 ? Convert.ToByte(hex.Substring(6, 2), 16) : (byte)255;
+
+                    // Convert to RGB
+                    string rgb = $"{r}, {g}, {b}";
+                    RgbInput.Text = rgb;
+
+                    // Convert to RGBA
+                    string rgba = $"{r}, {g}, {b}, {(byte)255}";
+                    RgbaInput.Text = rgba;
+
+                    // Update the preview
+                    ColorPreview.Background = new SolidColorBrush(Color.FromArgb(a, r, g, b));
+                }
+                else
+                {
+                    throw new ArgumentException("Please provide a valid input in one of the fields.");
+                }
             }
-            else if (!string.IsNullOrWhiteSpace(RgbaInput.Text))
+            catch (FormatException)
             {
-                // Convert from RGBA
-                string[] rgbaParts = RgbaInput.Text.Split(',');
-                if (rgbaParts.Length != 4 || !IsValidRGBA(rgbaParts))
-                    throw new ArgumentException("Invalid RGBA format. Use 'R,G,B,A' format.");
-
-                byte r = byte.Parse(rgbaParts[0]);
-                byte g = byte.Parse(rgbaParts[1]);
-                byte b = byte.Parse(rgbaParts[2]);
-                byte a = byte.Parse(rgbaParts[3]);
-
-                // Convert to RGB
-                string rgb = $"{r}, {g}, {b}";
-                RgbInput.Text = rgb;
-
-                // Convert to HEX
-                string hex = $"#{r:X2}{g:X2}{b:X2}";
-                HexInput.Text = hex;
-
-                // Update the preview
-                ColorPreview.Background = new SolidColorBrush(Color.FromArgb(a, r, g, b));
+                ErrorInput.Text = "Invalid color format. Please check your input.";
+                ErrorInput.Visibility = Visibility.Visible;
             }
-            else if (!string.IsNullOrWhiteSpace(HexInput.Text))
+            catch (ArgumentException ex)
             {
-                // Convert from HEX
-                string hex = HexInput.Text.Trim('#');
-                if (!IsValidHex(hex))
-                    throw new ArgumentException("Invalid HEX format. Use '#RRGGBB' or '#RRGGBBAA' format.");
-
-                byte r = Convert.ToByte(hex.Substring(0, 2), 16);
-                byte g = Convert.ToByte(hex.Substring(2, 2), 16);
-                byte b = Convert.ToByte(hex.Substring(4, 2), 16);
-                byte a = hex.Length == 8 ? Convert.ToByte(hex.Substring(6, 2), 16) : (byte)255;
-
-                // Convert to RGB
-                string rgb = $"{r}, {g}, {b}";
-                RgbInput.Text = rgb;
-
-                // Convert to RGBA
-                string rgba = $"{r}, {g}, {b}, {(byte)255}";
-                RgbaInput.Text = rgba;
-
-                // Update the preview
-                ColorPreview.Background = new SolidColorBrush(Color.FromArgb(a, r, g, b));
+                ErrorInput.Text = ex.Message;
+                ErrorInput.Visibility = Visibility.Visible;
             }
-            else
+            catch (Exception)
             {
-                throw new ArgumentException("Please provide a valid input in one of the fields.");
+                ErrorInput.Text = "An unexpected error occurred. Please try again.";
+                ErrorInput.Visibility = Visibility.Visible;
             }
         }
 

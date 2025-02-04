@@ -1,56 +1,37 @@
-## Dev ToolBox
+# Dev ToolBox
 
-Dev ToolBox is a versatile WPF-based desktop application that provides a suite of tools to assist with everyday development and productivity tasks. Its intuitive interface and modular design make it easy to use, whether you're a seasoned developer or a beginner.
+## Overview
+Dev ToolBox is a collection of handy utilities designed to assist developers with common tasks such as calculations, conversions, formatting, and more.
 
 ## Features
 
-### 1. String Converter
+### Calculator
+- **Simple Calculator**: Perform basic arithmetic operations.
+- **Compound Interest Calculator**: Calculate the future value of an investment with compound interest.
+- **Percentage Calculator**: Easily compute percentage-based calculations.
 
-- Convert text to lowercase, UPPERCASE, PascalCase, snake_case, camelCase, and kebab-case.
+### Converters
+- **String Converter**: Convert text between different formats.
+- **Time Converter**: Convert between different time units.
+- **Temperature Converter**: Convert temperatures between Celsius, Fahrenheit, and Kelvin.
+- **Speed Converter**: Convert between different speed units (m/s, km/h, mph, etc.).
+- **Color Converter**: Convert colors between RGB, RGBA, and Hex formats.
 
-### 2. Percentage Calculator
+### Miscellaneous Tools
+- **Diff Viewer**: Compare two pieces of text and highlight differences.
+- **Regex Checker**: Test and validate regular expressions.
+- **JSON Formatter & Validator**: Format and validate JSON data.
+- **URL Parser**: Extract components from a URL.
+- **Sort & Dedupe Line**: Sort lines of text and remove duplicates.
+- **QR Code Generator**: Generate QR codes from text input.
+- **Duplicate File Finder**: Scan a directory and identify duplicate files.
+- **Password Generator**: Generate secure passwords with customizable options.
+- **Dark Mode/Theme Editor**: Customize the app's theme and toggle between light and dark modes.
 
-- Perform percentage-based calculations:
-
-- Calculate percentage increase/decrease.
-
-- Find variation between two numbers.
-
-- Compute compound interest with additional contributions and display the total interest earned.
-
-### 3. Diff Viewer
-
-- Compare two blocks of text to identify differences.
-
-- Highlights added, removed, and modified lines.
-
-### 4. QR Code Generator
-
-- Generate a QR code from a pasted URL or text.
-
-- Save the QR code as an image.
-
-### 5. Regex Checker
-
-- Test and validate regular expressions.
-
-- View matches and groups in real-time.
-
-### 6. Time Converter
-
-- Convert time between various units (seconds, minutes, hours, days).
-
-- User-friendly interface for quick conversions.
-
-### 7. URL Parser
-
-- Parse URLs to extract components like protocol, hostname, path, query parameters, and fragments.
-
-### 8. Basic Calculator
-
-- Perform simple arithmetic operations (addition, subtraction, multiplication, division).
-
-- Clear interface with responsive design.
+## Installation
+1. Download the latest release from the Releases section.
+2. Run the installer.
+3. Launch the application and start using the tools.
 
 ## How to Build and Run
 
